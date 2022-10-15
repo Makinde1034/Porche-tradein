@@ -1,0 +1,8 @@
+backstop_data
+*.js
+*.vue
+*.html
+*.json
+*.md
+*.ts
+*.jsx

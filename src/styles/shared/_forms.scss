@@ -2,7 +2,7 @@
 @import './margins';
 @import './xps-p-content-wrapper';
 
-@import '../../../../Shared/forms/styles';
+@import '../../../Shared/forms/styles';
 
 $widths: (
   'xxs': 'xs',
@@ -137,3 +137,4 @@ $widths: (
     }
   }
 }
+

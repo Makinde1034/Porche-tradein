@@ -1,3 +1,13 @@
+# SETUP
+
+```
+> git clone https://github.com/membagroup/pdwaas.git
+> npm i
+extract "@porsche.zip" to "node_modules"
+> yarn story:dev
+```
+
+
 # DwaaS - Dealer as a Service
 
 > Frontend implementation of DwaaS build with Vue [![npm](https://img.shields.io/npm/v/vue.svg)](https://www.npmjs.com/package/vue) powered with Vite [![npm](https://img.shields.io/npm/v/vite.svg)](https://www.npmjs.com/package/vite)

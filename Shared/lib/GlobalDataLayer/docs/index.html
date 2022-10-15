@@ -1,0 +1,603 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>@porsche/globaldatalayer</title>
+	<meta name="description" content="Documentation for @porsche/globaldatalayer">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="assets/js/search.json" data-base=".">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="index.html" class="title">@porsche/globaldatalayer</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-only-exported" />
+							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="globals.html">Globals</a>
+				</li>
+			</ul>
+			<h1>@porsche/globaldatalayer</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<div class="tsd-panel tsd-typography">
+				<a href="#global-data-layer-library-documentation" id="global-data-layer-library-documentation" style="color: inherit; text-decoration: none;">
+					<h1>Global Data Layer Library Documentation</h1>
+				</a>
+				<p><strong>General purpose</strong>: Provide a way to handle and push events to the global array <em>pagData</em> in a more effective way.</p>
+				<a href="#contents" id="contents" style="color: inherit; text-decoration: none;">
+					<h2>Contents</h2>
+				</a>
+				<!-- toc -->
+				<ul>
+					<li><a href="#usage">Usage</a></li>
+					<li><a href="#constructor-arguments">Constructor Arguments</a></li>
+					<li><a href="#methods">Methods</a><ul>
+							<li><a href="#push">push</a></li>
+							<li><a href="#setdefaultproperties">setDefaultProperties</a><ul>
+									<li><a href="#dynamic-values">Dynamic Values</a></li>
+								</ul>
+							</li>
+							<li><a href="#getpagdata">getPagData</a></li>
+							<li><a href="#registerextension">registerExtension</a></li>
+						</ul>
+					</li>
+					<li><a href="#modules">Modules</a><ul>
+							<li><a href="#adding-a-new-module">Adding a new module</a></li>
+							<li><a href="#usage-1">Usage</a></li>
+							<li><a href="#creating-some-default-properties">Creating Some Default Properties</a></li>
+							<li><a href="#base-props">Base Props</a><ul>
+									<li><a href="#use-of-withbasewebprops">Use of <code>withBaseWebProps</code></a></li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li><a href="#extensions">Extensions</a><ul>
+							<li><a href="#creating-an-extension">Creating an Extension</a></li>
+							<li><a href="#loading-an-extension">Loading an Extension</a></li>
+							<li><a href="#calling-an-extension-method">Calling an Extension Method</a></li>
+							<li><a href="#available-extensions">Available Extensions</a></li>
+						</ul>
+					</li>
+					<li><a href="#working-on-the-library">Working on The Library</a><ul>
+							<li><a href="#project-structure">Project structure</a></li>
+							<li><a href="#npm-tasks"><code>npm</code> Tasks</a><ul>
+									<li><a href="#test">Test</a></li>
+									<li><a href="#format-and-lint">Format and Lint</a></li>
+									<li><a href="#release">Release</a></li>
+									<li><a href="#build">Build</a></li>
+									<li><a href="#pre-builds">Pre Builds</a></li>
+									<li><a href="#event-matrix">Event Matrix</a></li>
+								</ul>
+							</li>
+							<li><a href="#eventsjson">events.json</a><ul>
+									<li><a href="#how-to-generate-the-event-matrix">How to Generate the Event Matrix</a></li>
+									<li><a href="#validation-via-eventmatrix">Validation via EventMatrix</a></li>
+								</ul>
+							</li>
+							<li><a href="#pre-commit-hooks">Pre Commit Hooks</a></li>
+							<li><a href="#naming-conventions">Naming Conventions</a><ul>
+									<li><a href="#branch">Branch</a></li>
+									<li><a href="#commits">Commits</a></li>
+									<li><a href="#merge-requests">Merge Requests</a></li>
+									<li><a href="#auto-changelog-prefixes">Auto Changelog Prefixes</a></li>
+								</ul>
+							</li>
+							<li><a href="#create-a-release">Create a release</a></li>
+						</ul>
+					</li>
+				</ul>
+				<!-- tocstop -->
+				<a href="#usage" id="usage" style="color: inherit; text-decoration: none;">
+					<h2>Usage</h2>
+				</a>
+				<p>Integrate the version you need (dev for Preview or dist for Production) into your page and instantiate by calling the constructor:  </p>
+				<pre><code class="language-javascript"><span class="hljs-keyword">var</span> GDL = <span class="hljs-keyword">new</span> GlobalDataLayer(mySettings);</code></pre>
+				<p>On the most porsche.com pages you can use the already available global instance.</p>
+				<pre><code class="language-javascript"><span class="hljs-built_in">window</span>.GDL.push(myData);</code></pre>
+				<a href="#versions" id="versions" style="color: inherit; text-decoration: none;">
+					<h2>Versions</h2>
+				</a>
+				<a href="#dev-for-preview-and-test" id="dev-for-preview-and-test" style="color: inherit; text-decoration: none;">
+					<h3><code>dev</code> for Preview and Test</h3>
+				</a>
+				<p>The <code>dev</code> version can validate your data if you also transfer the <code>eventMatrix</code> setting.</p>
+				<a href="#dist-for-production" id="dist-for-production" style="color: inherit; text-decoration: none;">
+					<h3><code>dist</code> for Production</h3>
+				</a>
+				<p>Optimized for production with no complex validation available.</p>
+				<a href="#constructor-arguments" id="constructor-arguments" style="color: inherit; text-decoration: none;">
+					<h2>Constructor Arguments</h2>
+				</a>
+				<pre><code class="language-javascript"><span class="hljs-keyword">var</span> GDL = <span class="hljs-keyword">new</span> GlobalDataLayer({<span class="hljs-attr">eventMatrix</span>: myValidationData});</code></pre>
+				<p>GDL accepts a settings object to modify certain default configuration. These are the properties that can be passed:  </p>
+				<table>
+					<thead>
+						<tr>
+							<th>Argument</th>
+							<th>Param</th>
+							<th>Description</th>
+						</tr>
+					</thead>
+					<tbody><tr>
+							<td><code>settings</code></td>
+							<td>eventMatrix</td>
+							<td><code>Object</code> It is the object which will be use to perform the validations. This object is generated through the command <code>generate-event-matrix</code>. The validation is only available in the <code>dev</code> version.</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>removeUnacceptableValues</td>
+							<td><code>Object</code> Contain the custom configuration to remove automatically certain values of the objects passed.</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>allowUnknownPropsOnPush</td>
+							<td><code>boolean</code> Allow to push properties that are not exist in the given <code>eventMatrix</code>. This can be overridden in the <code>options</code> of every <code>push</code>.</td>
+						</tr>
+				</tbody></table>
+				<p>For more information about the settings object please read the Docs generated for the project using the <a href="https://jsdoc.app">JSDoc</a> in the folder <a href="./docs"><code>./docs/</code></a>.</p>
+				<a href="#methods" id="methods" style="color: inherit; text-decoration: none;">
+					<h2>Methods</h2>
+				</a>
+				<a href="#push" id="push" style="color: inherit; text-decoration: none;">
+					<h3>push</h3>
+				</a>
+				<p>Push data to the pagData global array by validating it against the matrix located on <code>src/layers/[YOUR_PROJECT]/data/events.json</code>.</p>
+				<table>
+					<thead>
+						<tr>
+							<th>Param</th>
+							<th>Description</th>
+						</tr>
+					</thead>
+					<tbody><tr>
+							<td>event</td>
+							<td><code>String</code> The event you want to push.</td>
+						</tr>
+						<tr>
+							<td>eventData</td>
+							<td><code>Object</code> Required properties for the event. <em>Please note that these data might be merged with the properties transferred already via the <code>setDefaultProperties</code> method.</em></td>
+						</tr>
+						<tr>
+							<td>options</td>
+							<td><code>Object</code> Set of options</td>
+						</tr>
+						<tr>
+							<td>options.turnOffValidation</td>
+							<td><code>boolean</code> Turn off the validation of the given <code>eventData</code> against the given <code>eventMatrix</code>.</td>
+						</tr>
+						<tr>
+							<td>options.allowUnknownProps</td>
+							<td><code>boolean</code> Allow to push properties that are not exist in the given <code>eventMatrix</code>.</td>
+						</tr>
+				</tbody></table>
+				<a href="#setdefaultproperties" id="setdefaultproperties" style="color: inherit; text-decoration: none;">
+					<h3>setDefaultProperties</h3>
+				</a>
+				<p>Set default properties to one or multiple events to avoid repeating.</p>
+				<table>
+					<thead>
+						<tr>
+							<th>Param</th>
+							<th>Description</th>
+						</tr>
+					</thead>
+					<tbody><tr>
+							<td>event</td>
+							<td><code>String</code> The event name to bind the properties to.</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td><code>String[]</code> Multiple event names to bind the properties to.</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td><code>RegExp</code> A Regular Expression to match event names to bind the properties to.</td>
+						</tr>
+						<tr>
+							<td>defaultProperties</td>
+							<td><code>Object</code> The default properties you want to set up.</td>
+						</tr>
+				</tbody></table>
+				<a href="#dynamic-values" id="dynamic-values" style="color: inherit; text-decoration: none;">
+					<h4>Dynamic Values</h4>
+				</a>
+				<p>You can also  push <strong>dynamic values</strong>, a function that is always called at the moment some pushes an event. </p>
+				<pre><code class="language-javascript">setDefaultProperties(
+  <span class="hljs-string">&#x27;PAGPCOM_General_Pageload&#x27;</span>, 
+  {
+    <span class="hljs-attr">visitor</span>: {
+      <span class="hljs-attr">deviceBrowserHeight</span>: <span class="hljs-function">() =&gt;</span> <span class="hljs-built_in">window</span>.innerHeight.toString(),
+    },
+  }
+);</code></pre>
+				<a href="#getpagdata" id="getpagdata" style="color: inherit; text-decoration: none;">
+					<h3>getPagData</h3>
+				</a>
+				<p>Initialize the  global array <code>pagaData</code>, if it is not already available, and return it.</p>
+				<a href="#registerextension" id="registerextension" style="color: inherit; text-decoration: none;">
+					<h3>registerExtension</h3>
+				</a>
+				<p>Register an extension into the GDL instance.</p>
+				<table>
+					<thead>
+						<tr>
+							<th>Param</th>
+							<th>Description</th>
+						</tr>
+					</thead>
+					<tbody><tr>
+							<td>ext</td>
+							<td><code>Object extends BaseExtension</code> It is the extension class to register.</td>
+						</tr>
+						<tr>
+							<td>config</td>
+							<td><code>Object</code> Its a configuration object for the extension.</td>
+						</tr>
+				</tbody></table>
+				<a href="#extensions" id="extensions" style="color: inherit; text-decoration: none;">
+					<h2>Extensions</h2>
+				</a>
+				<p>An extension is a class to allow the user to run some logic across the <code>GlobalDataLayer</code>, providing a way to track certain things without the need to create the same logic in several places. \</p>
+				<blockquote>
+					<p>Just imagine that you need to track the position of several DOM elements in the viewport. With an extension you would write the logic to be able to register the DOM elements and then you only need to call that extension through <code>GDL.ext.MyExtensionName.register</code>.  </p>
+				</blockquote>
+				<a href="#creating-an-extension" id="creating-an-extension" style="color: inherit; text-decoration: none;">
+					<h3>Creating an Extension</h3>
+				</a>
+				<p>Create your extension class inside the directory <a href="./src/extensions"><code>src/extensions</code></a>. Then extend your class with <a href="./src/extensions/BaseExtension.ts"><code>src/extensions/BaseExtension.ts</code></a>.</p>
+				<pre><code class="language-javascript"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyExtensionName</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">BaseExtension</span> </span>{}</code></pre>
+				<p>Inside the class you can create as many methods and logic as you want.  </p>
+				<a href="#loading-an-extension" id="loading-an-extension" style="color: inherit; text-decoration: none;">
+					<h3>Loading an Extension</h3>
+				</a>
+				<p>As the extensions are not loaded automatically in the GDL class, you will need to register your extension to make it available later. The place to do that is inside of your module for example.  </p>
+				<pre><code class="language-javascript">globalDataLayerInstance.registerExtension(
+  <span class="hljs-keyword">new</span> MyExtensionName(globalDataLayerInstance, { <span class="hljs-string">&quot;mySetting&quot;</span>: <span class="hljs-string">&quot;withValue&quot;</span> })
+);</code></pre>
+				<p>Note that the second parameter could contain any additional setting or information to set up your extension. </p>
+				<a href="#calling-an-extension-method" id="calling-an-extension-method" style="color: inherit; text-decoration: none;">
+					<h3>Calling an Extension Method</h3>
+				</a>
+				<p>After doing that you will be able to access to your extension through the ext property inside GDL. It would be like:</p>
+				<pre><code class="language-javascript"> GDL.ext.MyExtensionName.register();</code></pre>
+				<p>In this example we are accessing to the register method we created inside our extension, but you can create the methods you want. </p>
+				<a href="#available-extensions" id="available-extensions" style="color: inherit; text-decoration: none;">
+					<h3>Available Extensions</h3>
+				</a>
+				<ul>
+					<li><a href="./src/extensions/DefaultWebProperties.md"><code>DefaultWebProperties</code></a>: To handle default properties, that could be used in every web application.</li>
+					<li><a href="./src/extensions/PageNameExtender.md"><code>PageNameExtender</code></a>: To handle the page name in single page applications or modules</li>
+					<li><a href="./src/extensions/ViewportTracker.md"><code>ViewportTracker</code></a>: To track DOM elements come into view</li>
+				</ul>
+				<a href="#working-on-the-library" id="working-on-the-library" style="color: inherit; text-decoration: none;">
+					<h2>Working on The Library</h2>
+				</a>
+				<a href="#project-structure" id="project-structure" style="color: inherit; text-decoration: none;">
+					<h3>Project structure</h3>
+				</a>
+				<ul>
+					<li><a href="./data"><code>/data</code></a> Contains the <code>[YOUR_PROJECT].csv</code> which is used to generate the EventMatrix.</li>
+					<li><a href="./docs"><code>/docs</code></a> The output folder for the generated docs.</li>
+					<li><a href="./dev"><code>/dev</code></a> The build folder for development.</li>
+					<li><a href="./dist"><code>/dist</code></a> The build folder for production.</li>
+					<li><a href="./src"><code>/src</code></a> The code of the library.<ul>
+							<li><a href="./core"><code>/core</code></a> The GlobalDataLayer core class.</li>
+							<li><a href="./examples"><code>/examples</code></a> The example file to see the library working. You can use it as well to test the builds quickly.</li>
+							<li><a href="./extensions"><code>/extensions</code></a> Find BaseExtension and all global available extensions here.</li>
+							<li><a href="./layers"><code>/layers</code></a> Contains all the projects and its respective generated EventMatrix.</li>
+							<li><a href="./libraries"><code>/libraries</code></a> Contains all the internal libraries used in the project.</li>
+						</ul>
+					</li>
+					<li><a href="./tests"><code>/tests</code></a> Contains all the unit tests for the library.</li>
+					<li><a href="./webpack"><code>/webpack</code></a> Contains the webpack config files.</li>
+				</ul>
+				<p>In the root of the project you can find the config files for <em>Prettier</em>, <em>Jest</em>, <em>Eslint</em> and <em>typescript</em>.</p>
+				<a href="#npm-tasks" id="npm-tasks" style="color: inherit; text-decoration: none;">
+					<h3><code>npm</code> Tasks</h3>
+				</a>
+				<a href="#test" id="test" style="color: inherit; text-decoration: none;">
+					<h4>Test</h4>
+				</a>
+				<ul>
+					<li><strong>dev</strong> <br>Creates a web server to test the changes in your browsers <code>console</code>.</li>
+				</ul>
+				<ul>
+					<li><strong>test</strong> <br>Execute the tests that are under the folder <a href="./tests"><code>/tests</code></a>.</li>
+				</ul>
+				<a href="#format-and-lint" id="format-and-lint" style="color: inherit; text-decoration: none;">
+					<h4>Format and Lint</h4>
+				</a>
+				<ul>
+					<li><strong>lint</strong> <br>Check if there are eslint errors or bad formatted files in the <a href="./src"><code>/src</code></a> folder.</li>
+					<li><strong>format</strong> <br>Format all the files according to the eslint/prettier rules.</li>
+				</ul>
+				<a href="#release" id="release" style="color: inherit; text-decoration: none;">
+					<h4>Release</h4>
+				</a>
+				<ul>
+					<li><strong>release</strong> <br>Step by step controlled release. Asks for a new version number, does a build, generates the docs and changelog. Will push the changes and release everything to gitlab. Also see <a href="https://highway.porsche.com/confluence/x/NchCCw">Release Management</a> on confluence.</li>
+					<li><strong>release-fastlane</strong> <br>Does the same as <code>release</code> but will only ask for the new version number.</li>
+				</ul>
+				<a href="#build" id="build" style="color: inherit; text-decoration: none;">
+					<h4>Build</h4>
+				</a>
+				<p><em>The following tasks are also part of the release pipeline.</em></p>
+				<ul>
+					<li><strong>build</strong> <br>Generates the complete build output for development and production environment.</li>
+				</ul>
+				<a href="#build-steps" id="build-steps" style="color: inherit; text-decoration: none;">
+					<h5>Build Steps</h5>
+				</a>
+				<ul>
+					<li><strong>build-dev</strong> <br>Generates the <em>non minified</em> version for local and <em>Preview</em> in <a href="./dev"><code>/dev</code></a>.</li>
+					<li><strong>build-prod</strong> <br>Generates the version <em>minified</em> and <em>non minified</em> for <em>Prod</em> in <a href="./dist"><code>/dist</code></a>.</li>
+				</ul>
+				<a href="#pre-builds" id="pre-builds" style="color: inherit; text-decoration: none;">
+					<h4>Pre Builds</h4>
+				</a>
+				<p><em>The following tasks are also part of the release pipeline.</em></p>
+				<ul>
+					<li><strong>changelog</strong> <br>Updates the changelog by using <a href="https://git-scm.com/docs/git-log"><code>git log</code></a> for released changes. Also see <a href="#naming-conventions">Naming Conventions</a> and <a href="#auto-changelog-prefixes">Auto Changelog Prefixes</a>.</li>
+					<li><strong>readme-toc</strong> <br>Updates the TOC in this<code>README.md</code>.</li>
+					<li><strong>docs</strong> <br>Generates the technical source code documentation based on <a href="https://jsdoc.app">JSDoc</a>.</li>
+				</ul>
+				<a href="#event-matrix" id="event-matrix" style="color: inherit; text-decoration: none;">
+					<h4>Event Matrix</h4>
+				</a>
+				<ul>
+					<li><strong>generate-event-matrix</strong> <br>Generates the <code>src/layers/[YOUR_PROJECT]/events.json</code> file by using the current <a href="./data"><code>/data/[YOUR_PROJECT].csv</code></a>. It also generates the typescript interfaces on <code>/src/layers/[YOUR_PROJECT]/interfaces</code>.</li>
+				</ul>
+				<a href="#eventsjson" id="eventsjson" style="color: inherit; text-decoration: none;">
+					<h3>events.json</h3>
+				</a>
+				<a href="#how-to-generate-the-event-matrix" id="how-to-generate-the-event-matrix" style="color: inherit; text-decoration: none;">
+					<h4>How to Generate the Event Matrix</h4>
+				</a>
+				<p>The event matrix is a JSON file that lives under <code>/src/layers/[YOUR_PROJECT]/events.json</code>. It lets the library know what the possible and required properties for an event are, in order to be able to validate the properties that were pushed to the global array via the <code>push</code> method.</p>
+				<a href="#setup" id="setup" style="color: inherit; text-decoration: none;">
+					<h5>Setup</h5>
+				</a>
+				<p>To generate the matrix you need to update the <a href="./data"><code>/data/[YOUR_PROJECT].csv</code></a> file of your project first. You <strong>MUST</strong> be careful with the name you give to the csv file because, it will generate the matrix inside of a folder with the same name. In the case of PAGPCOM, the csv has to be named like this &#39;PAGPCOM&#39; (The naming conventions are simple: Only capital letters).</p>
+				<p>The json data will be part of the build output under <a href="./dist/events"><code>/dist/events/</code></a>. So you can use it in your project like this.</p>
+				<pre><code class="language-javascript"><span class="hljs-comment">// dist/events/GlobalDataLayer.events.PAGPCOM.js</span>
+<span class="hljs-comment">// dist/GlobalDataLayer.js</span>
+<span class="hljs-keyword">var</span> GDL = <span class="hljs-keyword">new</span> GlobalDataLayer({
+  <span class="hljs-attr">eventMatrix</span>: GlobalDataLayerEventsPAGPCOM <span class="hljs-comment">// insert your project key instead of PAGPCOM</span>
+});</code></pre>
+				<a href="#the-csv-file" id="the-csv-file" style="color: inherit; text-decoration: none;">
+					<h5>The CSV File</h5>
+				</a>
+				<p>The .csv file contains the worksheet <code>Herleitung DL</code> of the Excel file that comes from Smart Digital, which last updated version can be found under <a href="https://highway.porsche.com/confluence/x/IJL9CQ" target="_blank">PCOM Tracking Events Overview</a>.</p>
+				<p>To pass it to CSV just save it as &quot;CSV UTF-8 (Comma delimited)&quot; format with the O365 Excel app and set the delimiters as &#39;;&#39; (see this <a href="https://ashwaniashwin.wordpress.com/2013/04/19/save-excel-file-as-a-csv-semicolon-delimited-file-along-with-unicode-encoding/" target=_blank>blog post</a> for more information).</p>
+				<p>After you have updated the <a href="./data"><code>/data/[YOUR_PROJECT].csv</code></a>, just run the command <code>npm run generate-event-matrix</code> and it will generate the <strong>new</strong> <code>events.json</code> and the typescript Interfaces (which currently are not in use) under <code>src/layers/[your_CSV_file_name]/</code>.</p>
+				<a href="#validation-via-eventmatrix" id="validation-via-eventmatrix" style="color: inherit; text-decoration: none;">
+					<h4>Validation via EventMatrix</h4>
+				</a>
+				<p>The <code>src/layers/[YOUR_PROJECT]/data/events.json</code> allows the library to validate the events. </p>
+				<p>Find all available events in the <code>events</code> array (through that every event has an index):</p>
+				<pre><code class="language-json">{
+  <span class="hljs-attr">&quot;events&quot;</span>: [
+    <span class="hljs-string">&quot;PAGPCOM_FindADealer_Pageload&quot;</span>,
+    <span class="hljs-string">&quot;PAGPCOM_FindADealerSearch_Click&quot;</span>,
+    <span class="hljs-string">&quot;PAGPCOM_FindADealerLocateMe_Click&quot;</span>,
+    <span class="hljs-string">&quot;PAGPCOM_FindADealerSearchResults_Load&quot;</span>
+  ]
+}</code></pre>
+				<p>Find all properties named by there full key as an object:</p>
+				<pre><code class="language-json">{
+  <span class="hljs-attr">&quot;visitor.deviceBrowserBreakpoint&quot;</span>: {
+    <span class="hljs-attr">&quot;t&quot;</span>: <span class="hljs-string">&quot;STRING&quot;</span>,
+      <span class="hljs-attr">&quot;e&quot;</span>: {
+        <span class="hljs-attr">&quot;0&quot;</span>: <span class="hljs-number">0</span>,
+        <span class="hljs-attr">&quot;1&quot;</span>: <span class="hljs-number">0</span>
+      },
+    <span class="hljs-attr">&quot;r&quot;</span>: <span class="hljs-number">1</span>
+  }
+}</code></pre>
+				<p>All event properties have these three properties :  </p>
+				<ul>
+					<li><strong>t</strong>: The type of the property (<code>string</code>, <code>number</code>, <code>boolean</code>, ...).</li>
+					<li><strong>e</strong>: The events that have this property. The numbers correspond with the index of an event inside the events array (this concept keeps the file as light as possible). The value <code>0</code> is dummy value.</li>
+					<li><strong>r</strong>: The mandatory option. <code>1</code> property is mandatory property and therefore, it always has to be passed for all the events. <code>0</code> not mandatory.</li>
+				</ul>
+				<a href="#pre-commit-hooks" id="pre-commit-hooks" style="color: inherit; text-decoration: none;">
+					<h3>Pre Commit Hooks</h3>
+				</a>
+				<p>There are two <em>pre-commit hooks</em></p>
+				<ol>
+					<li>Checks if all the files have the proper format. So please set up your eslint and prettier properly.</li>
+					<li>Runs all the tests inside <a href="./tests"><code>/tests</code></a> folder. Please make sure all the test succeed, otherwise you will not able to commit. </li>
+				</ol>
+				<p>If you doubt which of these tests failed, you can run them separately (<code>npm run lint</code> or <code>npm run test</code>).</p>
+				<a href="#naming-conventions" id="naming-conventions" style="color: inherit; text-decoration: none;">
+					<h3>Naming Conventions</h3>
+				</a>
+				<a href="#branch" id="branch" style="color: inherit; text-decoration: none;">
+					<h4>Branch</h4>
+				</a>
+				<p>For creating branches and there naming conventions we created a <a href="https://highway.porsche.com/confluence/x/vrJCCw">Branching and Merge Concept</a> in our confluence documentation section.</p>
+				<a href="#commits" id="commits" style="color: inherit; text-decoration: none;">
+					<h4>Commits</h4>
+				</a>
+				<p>For the <code>commits</code> we have the following convention:</p>
+				<p><code>[CHANGELOG_PREFIX][TICKET_ID] [SHORT_SUMMARY_OF_THE_CHANGES_DONE]</code>  </p>
+				<p>Please keep the summary very short. You can also write a body message this needs some more explanation.</p>
+				<p>If a commit should be part of the automatic generated <a href="./CHANGELOG.md"><code>CHANGELOG.md</code></a> you can also use the given <a href="#auto-changelog-prefixes">prefixes</a>. </p>
+				<blockquote>
+					<p>⚠ Please note: Most of the automated changelog should come from the Merge Requests (which have a naming convention also). So please only add these prefixes if you have important log entries that are inside of a bigger change.</p>
+				</blockquote>
+				<a href="#merge-requests" id="merge-requests" style="color: inherit; text-decoration: none;">
+					<h4>Merge Requests</h4>
+				</a>
+				<p>For the naming conventions of <a href="https://gitlab.bb-k.net/porsche/global-data-layer/merge_requests">merge requests</a> we created a <a href="https://highway.porsche.com/confluence/x/vrJCCw">Branching and Merge Concept</a> in our confluence documentation section. </p>
+				<p>All merge request are part of the automatic generated <a href="./CHANGELOG.md"><code>CHANGELOG.md</code></a>. You can also use the given <a href="#auto-changelog-prefixes">prefixes</a> to define a category. Uncategorized merge requests are always features.</p>
+				<blockquote>
+					<p>Merge Backs must always be done via a Merge Request and need to be <a href="#auto-changelog-prefixes">prefixed</a> to exclude them from the automatic changelog.</p>
+				</blockquote>
+				<a href="#auto-changelog-prefixes" id="auto-changelog-prefixes" style="color: inherit; text-decoration: none;">
+					<h4>Auto Changelog Prefixes</h4>
+				</a>
+				<table>
+					<thead>
+						<tr>
+							<th>Prefix</th>
+							<th>Purpose</th>
+							<th>Example</th>
+						</tr>
+					</thead>
+					<tbody><tr>
+							<td></td>
+							<td><strong>Merge request</strong> with no prefix are always categorized as features.</td>
+							<td><em>DLPCOM-123 With <code>crazyMethod</code> we can now solve the balanced problem</em></td>
+						</tr>
+						<tr>
+							<td><code>MERGE BACK: </code> or <code>MB: </code></td>
+							<td>A merge back <strong>merge request</strong> must be excluded from the changelog.</td>
+							<td>_MB: master into feature/DLPCOM-123_add-crazy-method_</td>
+						</tr>
+						<tr>
+							<td><code>BREAKING CHANGE: </code></td>
+							<td>Changes to the code that are important for others.</td>
+							<td><em>BREAKING CHANGE: DLPCOM-123 <code>crazyMethod</code> has settings parameter now</em></td>
+						</tr>
+						<tr>
+							<td><code>BUGFIX: </code></td>
+							<td>If you are fixing a bug please also mention the ticket then.</td>
+							<td><em>BUGFIX: DLPCOM-123 <code>crazyMethod</code> fails when <code>settings</code> are undefined</em></td>
+						</tr>
+						<tr>
+							<td><code>CSV: </code></td>
+							<td>Changes regarding a <a href="https://highway.porsche.com/confluence/x/IJL9CQ">DataLayer Excel</a> update</td>
+							<td><em>CSV: PAGPCOM v123</em></td>
+						</tr>
+						<tr>
+							<td><code>TEST: </code></td>
+							<td>If you have adapted or added an <strong>important</strong> <code>jest</code> test.</td>
+							<td><em>TEST: Added test for <code>crazyMethod</code></em></td>
+						</tr>
+						<tr>
+							<td><code>DOCS: </code></td>
+							<td>If you have adapted or added an <strong>important</strong> documentation.</td>
+							<td><em>DOCS: Added documentation for <code>crazyMethod</code></em></td>
+						</tr>
+				</tbody></table>
+				<a href="#create-a-release" id="create-a-release" style="color: inherit; text-decoration: none;">
+					<h3>Create a release</h3>
+				</a>
+				<p>The process to create a new release is documented in detail on the <a href="https://highway.porsche.com/confluence/x/NchCCw">Release Management</a> confluence page.</p>
+				<p>Here is a short version:</p>
+				<ul>
+					<li>Releases (or builds) are only allowed to be generated and pushed in the <code>master</code>. Therefore, you need to be a maintainer of the project.</li>
+					<li>Use the <a href="#commands">command</a> of the <a href="#release">release</a> section like <code>relese-fastlane</code>.</li>
+					<li>If you have doubts, use <code>release</code> command and check the files before they are committed, tagged, pushed and released. </li>
+				</ul>
+			</div>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="globals.html"><em>Globals</em></a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_core_globaldatalayer_.html">&quot;core/<wbr>Global<wbr>Data<wbr>Layer&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_extensions_baseextension_.html">&quot;extensions/<wbr>Base<wbr>Extension&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_extensions_defaultwebproperties_.html">&quot;extensions/<wbr>Default<wbr>Web<wbr>Properties&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_extensions_pagenameextender_.html">&quot;extensions/<wbr>Page<wbr>Name<wbr>Extender&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_extensions_viewporttracker_.html">&quot;extensions/<wbr>Viewport<wbr>Tracker&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_interfaces_matrixinterface_.html">&quot;interfaces/<wbr>Matrix<wbr>Interface&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_libraries_utils_.html">&quot;libraries/<wbr>Utils&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_utils_checkticker_.html">&quot;utils/<wbr>Check<wbr>Ticker&quot;</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

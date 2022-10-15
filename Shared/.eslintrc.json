@@ -1,0 +1,4 @@
+{
+  "extends": "../PCOM/.eslintrc.json",
+  "ignorePatterns": ["lib/GlobalDataLayer", "lib/IrisApi"]
+}

@@ -2,7 +2,7 @@
   padding: 0 $p-spacing-8;
 
   &:not(:first-child) {
-    @include p-media-query("xs", "m") {
+    @include p-media-query('xs', 'm') {
       margin-top: $p-spacing-16;
     }
   }
@@ -12,7 +12,7 @@
   margin-top: $p-spacing-16;
 }
 
-.submit-container input[type="submit"] {
+.submit-container input[type='submit'] {
   position: absolute;
   opacity: 0;
   width: 1px;
@@ -60,7 +60,7 @@
     @include p-col;
   }
 
-  @include p-media-query("xs") {
+  @include p-media-query('xs') {
     &-row--xs {
       @include p-row;
     }
@@ -70,7 +70,7 @@
     }
   }
 
-  @include p-media-query("s") {
+  @include p-media-query('s') {
     &-row--s {
       @include p-row;
     }
@@ -80,7 +80,7 @@
     }
   }
 
-  @include p-media-query("m") {
+  @include p-media-query('m') {
     &-row--m {
       @include p-row;
     }
@@ -90,7 +90,7 @@
     }
   }
 
-  @include p-media-query("l") {
+  @include p-media-query('l') {
     &-row--l {
       @include p-row;
     }
@@ -100,7 +100,7 @@
     }
   }
 
-  @include p-media-query("xl") {
+  @include p-media-query('xl') {
     &-row--xl {
       @include p-row;
     }
@@ -110,3 +110,4 @@
     }
   }
 }
+

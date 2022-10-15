@@ -1,0 +1,20 @@
+$z-index: (
+  swiper: 0,
+  slider-arrows: 100,
+  form-flyouts: 200,
+  content-navigation: 300,
+  google-maps-cover: 400,
+  skeleton: 1000,
+  eco-tooltip: 10000,
+  main-navigation: 20000,
+  media-gallery-fullscreen: 20100,
+  /* add more z-indexes here to keep the overview // z-index step 100 */
+);
+
+@function z-index($key) {
+  @return map-get($z-index, $key);
+}
+
+@mixin z-index($key) {
+  z-index: z-index($key);
+}

@@ -1,0 +1,32 @@
+body::before {
+  display: none;
+  visibility: hidden;
+
+  @include p-media-query('xxs') {
+    content: 'xxs';
+  }
+
+  @include p-media-query('xs') {
+    content: 'xs';
+  }
+
+  @include p-media-query('s') {
+    content: 's';
+  }
+
+  @include p-media-query('m') {
+    content: 'm';
+  }
+
+  @include p-media-query('l') {
+    content: 'l';
+  }
+
+  @include p-media-query('xl') {
+    content: 'xl';
+  }
+
+  @include p-media-query('xxl') {
+    content: 'xxl';
+  }
+}

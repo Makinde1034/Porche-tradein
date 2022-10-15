@@ -1,0 +1,60 @@
+@import '/@/styles/z-index';
+@import '@porsche-design-system/utilities/scss';
+
+.main-navigation {
+  &__wrapper {
+    &--overlay-open {
+      opacity: 1;
+      visibility: visible;
+      background-color: rgba(0, 0, 0, 0.8);
+      transition: opacity 0.3s;
+
+      .mobile-navigation__dialogue {
+        transform: translateX(0);
+        transition: transform 0.3s;
+      }
+    }
+
+    &--overlay-closed {
+      transform: translateX(100%);
+      opacity: 0;
+      visibility: hidden;
+      background-color: rgba(0, 0, 0, 0);
+      transition-delay: 0.3s, 0s, 0s;
+      transition-property: transform, opacity, background-color, visibility;
+      transition-duration: 0s, 1s, 0.3s, 1s;
+
+      .mobile-navigation__dialogue {
+        transform: translateX(100%);
+        transition: transform 0.3s;
+      }
+    }
+
+    &--overlay-open,
+    &--overlay-closed {
+      @include z-index(main-navigation);
+
+      display: block;
+      position: fixed;
+      width: 100vw;
+      height: 100vh;
+      top: 0px;
+      left: 0px;
+
+      .mobile-navigation__dialogue {
+        position: absolute;
+        background: $p-color-background-default;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        overflow-y: scroll;
+        width: 100vw;
+        display: block;
+
+        @include p-media-query('m') {
+          width: p-px-to-rem(570px);
+        }
+      }
+    }
+  }
+}

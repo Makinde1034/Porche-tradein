@@ -1,0 +1,42 @@
+@import '/@/styles/shared/margins';
+
+.external-links {
+  a {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+  }
+
+  &__links {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+  }
+
+  &__link {
+    min-width: 100%;
+    display: flex;
+    margin: $p-spacing-16 0;
+    text-align: left;
+
+    @include p-media-query('s') {
+      margin: 0 0 p-px-to-rem(5px) 0;
+      min-width: auto;
+    }
+  }
+
+  &__divider {
+    display: none;
+
+    @include p-media-query('s') {
+      display: block;
+      height: 100%;
+      margin: 0 $p-spacing-16;
+    }
+  }
+
+  &__flex-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}

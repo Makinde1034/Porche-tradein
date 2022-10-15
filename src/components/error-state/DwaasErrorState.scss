@@ -1,0 +1,19 @@
+@import '../../styles/shared/xps-p-content-wrapper';
+@import '../../styles/shared/margins';
+
+.error-state {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 440px;
+  padding: 0 $p-spacing-48;
+  background-color: $p-color-background-surface;
+
+  &__headline {
+    margin-bottom: $p-spacing-8;
+  }
+
+  &__text {
+    margin-bottom: $p-spacing-32;
+  }
+}

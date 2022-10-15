@@ -1,0 +1,106 @@
+@import '/@/styles/z-index';
+@import '/@/styles/shared/margins';
+@import 'floating-vue/dist/style';
+
+.economy-data {
+  &__heading {
+    margin-bottom: $p-spacing-8;
+  }
+
+  &__button {
+    cursor: pointer;
+    background-color: inherit;
+    border: none;
+
+    &:not(:last-of-type) {
+      margin-right: p-px-to-rem(40px);
+    }
+  }
+
+  &__items {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__grid--item {
+    display: flex;
+  }
+}
+
+.economy-data-popup {
+  position: relative;
+
+  &__close {
+    position: fixed;
+    top: $p-spacing-48;
+    right: $p-spacing-48;
+    background: none;
+    border: none;
+    cursor: pointer;
+    pointer-events: all;
+
+    @include p-media-query('s') {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+  }
+
+  &__headline {
+    padding: p-px-to-rem(24px) p-px-to-rem(24px) 0 0;
+    margin-bottom: p-px-to-rem(15px);
+    font-size: $p-font-size-20;
+  }
+
+  &__text-line {
+    margin-bottom: p-px-to-rem(15px);
+    max-width: none;
+    white-space: initial;
+    word-wrap: normal;
+
+    @include p-media-query('s') {
+      max-width: 37vw;
+    }
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  &__image {
+    width: p-px-to-rem(250px);
+    height: auto;
+    max-width: 100%;
+    display: block;
+    margin: auto;
+  }
+}
+
+.v-popper__popper--shown {
+  .v-popper__inner {
+    @include z-index(eco-tooltip);
+    display: block;
+    padding: $p-spacing-24;
+    border: none;
+    border-radius: 0px;
+  }
+
+  .v-popper__arrow-outer,
+  .v-popper__arrow-inner {
+    visibility: hidden;
+  }
+
+  @include p-media-query('xxs', 's') {
+    transform: none !important;
+    position: fixed !important;
+    background-color: $p-color-background-shading;
+    padding: $p-spacing-24;
+    right: 0;
+    bottom: 0;
+
+    .v-popper__wrapper,
+    .v-popper__inner {
+      height: 100%;
+    }
+  }
+}

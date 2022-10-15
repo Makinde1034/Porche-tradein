@@ -1,0 +1,252 @@
+@import '/@/styles/z-index';
+@import '/@/styles/browser-specific';
+
+.dealer-flyout {
+  &__container {
+    @include z-index(main-navigation);
+
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: $p-color-background-default;
+    padding: p-px-to-rem(40px);
+    width: 100vw;
+
+    @include p-media-query('m') {
+      width: p-px-to-rem(570px);
+    }
+
+    @include p-media-query('l') {
+      display: none;
+      right: p-px-to-rem(4px);
+      left: auto;
+      top: p-px-to-rem(135px);
+      border: p-px-to-rem(1px) solid $p-color-neutral-contrast-low;
+      width: p-px-to-rem(400px);
+      padding: $p-spacing-16 $p-spacing-40 $p-spacing-40;
+      box-sizing: border-box;
+      overflow-y: visible;
+      height: fit-content;
+    }
+
+    &--open {
+      padding: p-px-to-rem(75px) 7% 0;
+      min-height: 100vw;
+
+      @include p-media-query('l') {
+        display: block;
+        padding: $p-spacing-16 $p-spacing-40 0;
+        min-height: unset;
+
+        @include firefox-only {
+          display: table;
+        }
+      }
+    }
+
+    @include p-media-query('l') {
+      .nav-actions:hover > & {
+        display: block;
+
+        @include firefox-only {
+          @include p-media-query('l') {
+            display: table;
+          }
+        }
+      }
+    }
+  }
+
+  &__triangle-top {
+    width: 0;
+    height: 0;
+    border-bottom: p-px-to-rem(12px) solid $p-color-neutral-contrast-low;
+    border-right: p-px-to-rem(12px) solid transparent;
+    border-left: p-px-to-rem(12px) solid transparent;
+    position: absolute;
+    top: p-px-to-rem(-12px);
+    left: p-px-to-rem(101px);
+    display: none;
+
+    @include p-media-query('l') {
+      display: block;
+    }
+
+    @include firefox-only {
+      top: p-px-to-rem(-11px);
+    }
+
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      width: p-px-to-rem(400px);
+      height: p-px-to-rem(11px);
+      left: p-px-to-rem(-114px);
+    }
+  }
+
+  &__inner-triangle {
+    position: relative;
+    top: p-px-to-rem(1px);
+    right: p-px-to-rem(10px);
+    width: 0;
+    height: 0;
+    border-bottom: p-px-to-rem(11px) solid $p-color-background-default;
+    border-right: p-px-to-rem(10px) solid transparent;
+    border-left: p-px-to-rem(10px) solid transparent;
+  }
+
+  &__header {
+    margin-bottom: p-px-to-rem(11px);
+
+    @include p-media-query('l') {
+      display: none;
+    }
+  }
+
+  &__back {
+    position: absolute;
+    left: p-px-to-rem(16px);
+    top: p-px-to-rem(27px);
+    display: flex;
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+
+    @include firefox-only {
+      &:focus-visible {
+        outline: #007aff auto 1px;
+        outline-offset: 1px;
+      }
+    }
+  }
+
+  &__overlay-title {
+    border-bottom: p-px-to-rem(1px) solid $p-color-neutral-contrast-low;
+    margin-bottom: p-px-to-rem(13px);
+    padding-bottom: p-px-to-rem(13px);
+
+    @include p-media-query('l') {
+      display: none;
+    }
+  }
+
+  &__button {
+    margin: auto p-px-to-rem(28px) auto auto;
+    display: flex;
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+
+    @include p-media-query('l') {
+      display: none;
+    }
+
+    &:focus {
+      outline: $p-color-state-focus solid p-px-to-rem(2px);
+      outline-offset: p-px-to-rem(1px);
+    }
+
+    &--close {
+      position: absolute;
+      right: p-px-to-rem(16px);
+      top: p-px-to-rem(16px);
+      font-size: $p-spacing-32;
+      line-height: $p-spacing-16;
+      color: inherit;
+      padding: 0;
+      cursor: pointer;
+      border: 1px solid rgb(50, 54, 57);
+      transition: background-color var(--p-animation-hover-duration, 0.24s) ease,
+        border var(--p-animation-hover-duration, 0.24s) ease,
+        color var(--p-animation-hover-duration, 0.24s) ease;
+      outline: transparent solid 1px;
+      outline-offset: 2px;
+      color: rgb(0, 0, 0);
+      background-color: transparent;
+      height: p-px-to-rem(48px);
+      width: p-px-to-rem(48px);
+
+      @include p-media-query('l') {
+        display: none;
+      }
+
+      &:focus {
+        outline: $p-color-state-focus solid p-px-to-rem(2px);
+        outline-offset: p-px-to-rem(1px);
+      }
+
+      &:hover {
+        color: rgb(255, 255, 255);
+        background-color: rgb(21, 23, 24);
+        border-color: rgb(21, 23, 24);
+      }
+    }
+
+    &--open {
+      margin-left: p-px-to-rem(12px);
+      background: none;
+      color: inherit;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+
+      div {
+        width: p-px-to-rem(20px);
+        height: p-px-to-rem(2px);
+        background-color: $p-color-default;
+        margin: p-px-to-rem(5px) 0;
+      }
+    }
+  }
+
+  &__links {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    margin: p-px-to-rem(80px) 7% 0;
+
+    @include p-media-query('l') {
+      display: block;
+      padding: 0 0 2.5rem;
+      margin: unset;
+    }
+  }
+
+  &__link {
+    margin: 0;
+    padding: $p-spacing-16 0;
+    border-bottom: p-px-to-rem(1px) solid $p-color-neutral-contrast-low;
+    display: flex;
+    width: 100%;
+    overflow-wrap: normal;
+
+    &-arrow {
+      float: right;
+    }
+
+    &-address {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &--title {
+      padding: $p-spacing-16 0;
+      list-style: none;
+      border-bottom: p-px-to-rem(1px) solid $p-color-neutral-contrast-high;
+
+      @include p-media-query('l') {
+        display: none;
+      }
+    }
+  }
+}

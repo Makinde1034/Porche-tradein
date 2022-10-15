@@ -1,0 +1,139 @@
+// Forms
+@import './margins';
+@import './xps-p-content-wrapper';
+
+@import '../../../../Shared/forms/styles';
+
+$widths: (
+  'xxs': 'xs',
+  'xs': 'sm',
+  's': 'md',
+  'm': 'lg',
+  'l': 'xl',
+);
+
+.col {
+  @each $pds-width, $bootstrap-width in $widths {
+    @include p-media-query($pds-width) {
+      &-#{$bootstrap-width} {
+        @for $size from 1 through 12 {
+          &-#{$size} {
+            flex: 0 0 calc($size / 12) * 100%;
+            max-width: calc($size / 12) * 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+.sitecore-form {
+  @include xps-p-content-wrapper;
+  @include default-margins;
+
+  visibility: hidden;
+  width: 83.333%;
+
+  &.loaded {
+    visibility: visible;
+  }
+
+  @include p-media-query('s') {
+    width: 75%;
+  }
+
+  @include p-media-query('m') {
+    width: 50%;
+  }
+
+  p-radio-button-wrapper,
+  p-checkbox-wrapper {
+    margin-top: p-px-to-rem(16px);
+  }
+}
+
+// Form Button
+
+.pds-form-submit-btn {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='100%25' height='100%25' focusable='false'%3E%3Cpath stroke='white' d='M14.75 12l-6 8h1.26L16 12l-5.99-8H8.75l6 8z'%3E%3C/path%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: 24px;
+  background-position: 0.6875rem 0.6875rem;
+  color: rgb(255, 255, 255);
+  background-color: rgb(213, 0, 28);
+  border-color: rgb(213, 0, 28);
+  vertical-align: top;
+  display: flex;
+  min-width: 3rem;
+  min-height: 3rem;
+  position: relative;
+  box-sizing: border-box;
+  appearance: none;
+  outline: transparent none;
+  text-decoration: none;
+  text-align: left;
+  border-style: solid;
+  border-width: 1px;
+  transition: background-color 0.24s ease 0s, border-color 0.24s ease 0s,
+    outline-color 0.24s ease 0s, color 0.24s ease 0s, font-size 1ms linear 0s;
+  cursor: pointer;
+  line-height: 1.5;
+  font-size: 1rem;
+  font-family: 'Porsche Next', 'Arial Narrow', Arial, sans-serif;
+  font-weight: 400;
+  list-style-type: none;
+  padding: 0.6875rem 0.9375rem 0.6875rem 2.4375rem;
+
+  &:enabled:hover {
+    color: rgb(255, 255, 255);
+    background-color: rgb(152, 0, 20);
+    border-color: rgb(152, 0, 20);
+  }
+
+  &:focus {
+    outline-color: rgb(0, 213, 185);
+    outline-width: 2px;
+    outline-style: solid;
+    outline-offset: 1px;
+  }
+}
+
+.pds-form-hidden-field {
+  display: none;
+}
+
+.validation-summary-errors {
+  position: static;
+  margin: p-px-to-rem(32px) 0;
+
+  ul {
+    display: flex;
+    position: relative;
+    padding: p-px-to-rem(16px) p-px-to-rem(16px) p-px-to-rem(16px)
+      p-px-to-rem(20px);
+    box-shadow: #0000000d 0 p-px-to-rem(2px) p-px-to-rem(4px) 0,
+      #0003 0 p-px-to-rem(15px) p-px-to-rem(20px) 0;
+    background-color: #fae6e6;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: p-px-to-rem(4px);
+      background-color: $p-color-notification-error;
+    }
+
+    li {
+      max-width: p-px-to-rem(800px);
+      padding-right: p-px-to-rem(48px);
+      line-height: 1.5;
+      color: $p-color-default;
+      font-weight: $p-font-weight-regular;
+      font-size: $p-font-size-16;
+      list-style-type: none;
+      font-family: $p-font-family;
+    }
+  }
+}

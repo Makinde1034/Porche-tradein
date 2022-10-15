@@ -1,0 +1,70 @@
+{
+    "variant": "default",
+    "slides": [
+      {
+        "is-first": true,
+        "has-title": false,
+        "href": "",
+        "target": "_blank",
+        "image-url": "https://prod.dwaas.porsche.com//-/media/Project/DealerWebsites/Canada/Calgary/Banner---PAC-Taycan-x-The-Car-Creative-45.jpg?rev=18a48d0d530048ddb39a759b1700c3eb",
+        "image-mobile-url": "https://dev.porsche.local/dwaasdev/-/media/Project/DealerWebsites/DevelopmentSite/Models_AR/8-9/cayenne-gts-coupe-4-3840x4318.jpg?rev=743cd906d63c410cb534bc3c3d4f8e3d",
+        "image-alt": "group-shots-911-turbo-models-3840x1600-5",
+        "image-width": "3840",
+        "image-height": "1600",
+        "title": "New holiday deals from Porsche",
+        "subtitle": "Christmas special"
+      },
+      {
+        "is-first": false,
+        "has-title": false,
+        "href": "/dwaasdev/en",
+        "target": "",
+        "image-url": "https://prod.dwaas.porsche.com//-/media/Project/DealerWebsites/Canada/Calgary/Banner---PAC-Porsche-Cayenne-Coupe-51.jpg?rev=3d7d9828bca6422199af52a8da6144be",
+        "image-mobile-url": "https://dev.porsche.local/dwaasdev/-/media/Project/DealerWebsites/DevelopmentSite/Models_AR/8-9/cayenne-gts-coupe-5-3840x4318.jpg?rev=6b26b7fb135243ce9cc7cf0c35d4515b",
+        "image-alt": "group-shots-911-turbo-models-3840x1600-4",
+        "image-width": "3840",
+        "image-height": "1600",
+        "title": "Testing multiple slides",
+        "subtitle": "This is the only &quot;Internal&quot; link in the same tab"
+      },
+      {
+        "is-first": false,
+        "has-title": false,
+        "href": "https://dealer.porsche.com/hungary/budapest",
+        "target": "_blank",
+        "image-url": "https://prod.dwaas.porsche.com//-/media/Project/DealerWebsites/SharedDealersWebsite/Model-Teaser/Taycan/TA20Q2EOX0005_01_rgb.jpg?rev=2e8b1951bc2348e0bfc87f7e6f837ecc",
+        "image-mobile-url": "https://dev.porsche.local/dwaasdev/-/media/Project/DealerWebsites/DevelopmentSite/Models_AR/8-9/cayenne-gts-coupe-6-3840x4318.jpg?rev=f07ca6ac1e60493fb3ad9e093b08064e",
+        "image-alt": "group-shots-911-turbo-models-3840x1600-3",
+        "image-width": "3840",
+        "image-height": "1600",
+        "title": "New holiday deals from Porsche",
+        "subtitle": "Christmas special #3"
+      },
+      {
+        "is-first": false,
+        "has-title": false,
+        "href": "https://dealer.porsche.com/hungary/budapest/modellek#c71",
+        "target": "_blank",
+        "image-url": "https://dev.porsche.local/dwaasdev/-/media/Project/DealerWebsites/DevelopmentSite/Models_AR/12-5/group-shots-911-turbo-models-3840x1600-2.jpg?rev=bfcccf11f17642b0a4ece4740bd80b7d",
+        "image-mobile-url": "https://dev.porsche.local/dwaasdev/-/media/Project/DealerWebsites/DevelopmentSite/Models_AR/8-9/cayenne-gts-coupe-3-3840x4318.jpg?rev=5890f08da8404c21937dfe952ba7df99",
+        "image-alt": "group-shots-911-turbo-models-3840x1600-2",
+        "image-width": "3840",
+        "image-height": "1600",
+        "title": "New holiday deals from Porsche",
+        "subtitle": "Christmas special #4"
+      },
+      {
+        "is-first": false,
+        "has-title": false,
+        "href": "https://dealer.porsche.com/hungary/budapest/modellek#c71",
+        "target": "_blank",
+        "image-url": "https://dev.porsche.local/dwaasdev/-/media/Project/DealerWebsites/DevelopmentSite/Models_AR/12-5/group-shots-911-turbo-models-3840x1600-1.jpg?rev=692f22a793804ab5bc83622dab532f93",
+        "image-mobile-url": "",
+        "image-alt": "group-shots-911-turbo-models-3840x1600-1",
+        "image-width": "3840",
+        "image-height": "1600",
+        "title": "New holiday deals from Porsche",
+        "subtitle": "Christmas special #5"
+      }
+    ]
+  }

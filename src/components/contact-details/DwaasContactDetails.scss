@@ -1,0 +1,70 @@
+@import '/@/styles/shared/margins';
+@import '/@/styles/normalize';
+
+.contact-details {
+  @include normalizeTag;
+
+  font-style: unset;
+
+  &__table {
+    &-container {
+      display: table;
+    }
+
+    &-row {
+      display: table-row;
+    }
+
+    &-entry {
+      display: table-cell;
+      vertical-align: top;
+
+      &--left-padded {
+        padding-left: $p-spacing-24;
+      }
+    }
+  }
+
+  &__address {
+    &-headline {
+      margin-bottom: $p-spacing-24;
+    }
+
+    &-contacts {
+      margin: $p-spacing-24 0 $p-spacing-48;
+    }
+
+    &-link {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  &__phone {
+    &:last-child {
+      margin-bottom: $p-spacing-48;
+    }
+
+    &-title {
+      margin-bottom: $p-spacing-24;
+    }
+  }
+
+  &__hours {
+    letter-spacing: normal;
+
+    &-headline {
+      margin-bottom: $p-spacing-24;
+    }
+
+    &-times {
+      &-dashspace {
+        padding: 0 $p-spacing-4;
+      }
+    }
+  }
+
+  &__note {
+    margin: $p-spacing-24 0;
+  }
+}

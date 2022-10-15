@@ -1,0 +1,21 @@
+{
+    "title": "This is Finder Teaser",
+    "tiles": [
+      {
+        "href": "/dwaasdev/en",
+        "src": "https://dev.porsche.local/dwaasdev/-/media/Project/DealerWebsites/DevelopmentSite/Finder_Teaser/finder-teaser-1b-3840x2880.jpg?rev=be92a62590284882abf28ad90a46b000",
+        "width": "3840",
+        "height": "2880",
+        "alt": "finder-teaser-1b-3840x2880",
+        "link": "Haszn&#225;lt g&#233;pj&#225;rművek - same tab"
+      },
+      {
+        "href": "https://dealer.porsche.com/hungary/budapest",
+        "src": "https://dev.porsche.local/dwaasdev/-/media/Project/DealerWebsites/DevelopmentSite/Finder_Teaser/finder-teaser-2a-3840x2880.jpg?rev=0bdf16b289d34a099dc4d368cc041102",
+        "width": "3840",
+        "height": "2880",
+        "alt": "finder-teaser-2a-3840x2880",
+        "link": "Modell&#252;bersicht - new tab"
+      }
+    ]
+  }

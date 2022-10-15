@@ -1,0 +1,110 @@
+.action-bar {
+  display: block;
+  overflow: hidden;
+  max-width: 100%;
+  width: 100%;
+
+  &--sticky {
+    position: fixed;
+    padding: 0;
+    top: 0;
+    z-index: 500;
+  }
+
+  &__flex-container {
+    background: $p-color-background-surface;
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+  }
+
+  &__button {
+    margin: 0 $p-spacing-16;
+    line-height: $p-font-size-20;
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-start;
+    text-align: center;
+    font-family: $p-font-family;
+    font-weight: $p-font-weight-regular;
+    font-size: $p-font-size-12;
+    color: $p-color-default;
+    fill: $p-color-default;
+    transition: color 0.24s ease 0s, font-size 1ms linear 0s;
+
+    @include p-media-query('m') {
+      flex-flow: row;
+      margin: 0 $p-spacing-48;
+      font-size: $p-font-size-16;
+      line-height: $p-font-size-24;
+    }
+
+    &:active * {
+      color: $p-color-state-active;
+      fill: $p-color-state-active;
+      transition: color 0.24s ease 0s, font-size 1ms linear 0s;
+    }
+
+    &:hover * {
+      color: $p-color-state-hover;
+      fill: $p-color-state-hover;
+      transition: color 0.24s ease 0s, font-size 1ms linear 0s;
+    }
+
+    &-container {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-evenly;
+      padding: $p-spacing-16 0;
+
+      @include p-media-query('m') {
+        justify-content: center;
+        padding: $p-spacing-24 0;
+      }
+    }
+
+    &-label {
+      margin-top: $p-spacing-8;
+
+      @include p-media-query('m') {
+        margin: 0 0 0 $p-spacing-4;
+        padding-right: 0 p-px-to-rem(2px) 0 0;
+      }
+
+      .action-bar--sticky & {
+        display: none;
+
+        @include p-media-query('m') {
+          display: block;
+        }
+      }
+    }
+
+    &-wrapper {
+      display: flex;
+      flex-flow: row nowrap;
+      margin: $p-spacing-24 0;
+    }
+  }
+
+  &__divider {
+    &-horizontal {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+
+      @include p-media-query('m') {
+        display: none;
+      }
+    }
+
+    &-vertical {
+      height: 100%;
+
+      @include p-media-query('m') {
+        display: none;
+      }
+    }
+  }
+}

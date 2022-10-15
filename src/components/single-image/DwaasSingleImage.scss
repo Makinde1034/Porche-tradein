@@ -1,0 +1,20 @@
+@import '/@/styles/shared/margins';
+
+.single-image {
+  width: 100%;
+
+  .media-image {
+    width: 100%;
+
+    @include p-media-query('m') {
+      width: 83.333%;
+
+      @supports (-webkit-appearance: none) and (stroke-color: transparent) {
+        @media not all and (-webkit-min-device-pixel-ratio: 0),
+          not all and (min-resolution: 0.001dpcm) {
+          padding-top: 46.874%;
+        }
+      }
+    }
+  }
+}

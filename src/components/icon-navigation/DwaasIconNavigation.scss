@@ -1,0 +1,42 @@
+@import '/@/styles/normalize';
+@import '/@/styles/shared/margins';
+
+.icon-nav {
+  @include normalizeTag;
+  @include defaultComponentPadding;
+
+  &__divider {
+    width: 100%;
+  }
+
+  &__icon {
+    margin: $p-spacing-16 $p-spacing-16 0 0;
+
+    &-container {
+      display: flex;
+      margin-top: -$p-spacing-16;
+      flex-flow: wrap;
+    }
+  }
+
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__headline {
+    width: 100%;
+    margin-top: p-px-to-rem(40px);
+
+    @include default-headline-margin-bottom;
+
+    @include p-media-query('m') {
+      margin-top: p-px-to-rem(72px);
+      display: flex;
+    }
+
+    &-container {
+      min-width: 100%;
+    }
+  }
+}

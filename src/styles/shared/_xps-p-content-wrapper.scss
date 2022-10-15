@@ -1,0 +1,10 @@
+@mixin xps-p-content-wrapper {
+  display: block;
+  margin: 0 auto;
+  max-width: 96rem;
+  padding: 0 7%;
+
+  @include p-media-query('xl') {
+    padding: 0 10%;
+  }
+}

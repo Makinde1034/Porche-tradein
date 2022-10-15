@@ -1,0 +1,43 @@
+@import 'swiper/css';
+@import 'swiper/css/pagination';
+@import 'swiper/css/navigation';
+@import 'swiper/css/autoplay';
+@import '/@/styles/z-index';
+
+body {
+  --swiper-theme-color: $p-color-brand;
+  --swiper-pagination-bullet-size: 12px;
+  --swiper-pagination-bullet-width: 12px;
+  --swiper-pagination-bullet-horizontal-gap: 0px;
+  --swiper-pagination-bullet-inactive-opacity: 0.8;
+  --swiper-pagination-bullet-opacity: 1;
+
+  .swiper.swiper-horizontal {
+    z-index: z-index(swiper);
+  }
+
+  .swiper-horizontal > .swiper-pagination-bullets,
+  .swiper-pagination-bullets.swiper-pagination-horizontal,
+  .swiper-pagination-bullets.swiper-pagination-bullets-dynamic {
+    bottom: p-px-to-rem(16px);
+
+    .swiper-pagination-bullet {
+      border: none;
+      background-clip: content-box;
+      box-sizing: content-box;
+      border-radius: 100%;
+      padding: p-px-to-rem(8px);
+      margin: p-px-to-rem(16px) 0 0 0;
+
+      &:focus {
+        outline: p-px-to-rem(1px) solid lightblue;
+        opacity: 1;
+      }
+
+      &.swiper-pagination-bullet-active {
+        background-color: $p-color-brand;
+        opacity: 1;
+      }
+    }
+  }
+}

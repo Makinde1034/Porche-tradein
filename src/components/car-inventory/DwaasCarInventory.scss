@@ -1,0 +1,161 @@
+@import '../../styles/shared/xps-p-content-wrapper';
+@import '../../styles/shared/margins';
+@import '/@/styles/swiper';
+@import '/@/styles/z-index';
+
+.car-inventory {
+  &__headline {
+    @include default-headline-margin-bottom;
+  }
+
+  &__wrapper {
+    position: relative;
+  }
+
+  &-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100%;
+    border: 1px solid $p-color-neutral-contrast-low;
+    box-shadow: p-px-to-rem(3px) p-px-to-rem(3px) p-px-to-rem(10px) 0
+      rgba(0, 0, 0, 0);
+    transition: box-shadow 0.2s ease-in-out;
+
+    &:hover {
+      box-shadow: p-px-to-rem(3px) p-px-to-rem(3px) p-px-to-rem(10px) 0
+        rgba(0, 0, 0, 0.1);
+    }
+
+    &__details {
+      padding: $p-spacing-24 $p-spacing-24 0 $p-spacing-24;
+    }
+
+    &__footer {
+      padding: 0 $p-spacing-24 $p-spacing-24 $p-spacing-24;
+    }
+
+    &__subtitle {
+      text-transform: capitalize;
+      padding: 0 0 $p-spacing-24;
+    }
+
+    &__color {
+      padding: 0 0 $p-spacing-16;
+    }
+
+    &__specs {
+      margin: 0 0 $p-spacing-16;
+      border-top: 1px solid $p-color-neutral-contrast-low;
+      border-bottom: 1px solid $p-color-neutral-contrast-low;
+    }
+
+    &__spec-item {
+      width: 47%;
+      padding: $p-spacing-16 $p-spacing-16 $p-spacing-16 0;
+    }
+
+    &__spec-item:not(:nth-last-child(-n + 2)) {
+      border-bottom: 1px solid $p-color-neutral-contrast-low;
+    }
+
+    &__btn {
+      display: inline-flex;
+      min-width: 3rem;
+      min-height: 3rem;
+      position: relative;
+      padding: 0.6875rem 0.9375rem 0.6875rem 2.4375rem;
+      box-sizing: border-box;
+      outline: transparent solid 1px;
+      cursor: pointer;
+      text-align: left;
+      border: 1px solid rgb(50, 54, 57);
+      background-color: rgb(50, 54, 57);
+      color: $p-color-neutral-contrast-low;
+      transition: background-color var(--p-transition-duration, 0.24s) ease,
+        border-color var(--p-transition-duration, 0.24s) ease;
+      outline-offset: 2px;
+      margin: $p-spacing-16 0 0;
+      width: 100%;
+
+      &:hover {
+        background-color: rgb(21, 23, 24);
+        border-color: rgb(21, 23, 24);
+      }
+
+      &:focus {
+        outline-color: rgb(50, 54, 57);
+      }
+
+      @include p-media-query('xs') {
+        width: auto;
+      }
+
+      &--icon {
+        position: absolute;
+        width: 1.5rem;
+        height: 1.5rem;
+        pointer-events: none;
+        left: 0.6875rem;
+        top: 0.6875rem;
+        transform: translate3d(0px, 0px, 0px);
+        color: $p-color-neutral-contrast-low;
+      }
+    }
+  }
+
+  &__loading {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: $p-spacing-24 0;
+  }
+
+  &__button {
+    @include z-index(slider-arrows);
+    position: absolute;
+    top: 50%;
+
+    &:focus {
+      outline: $p-color-state-focus solid p-px-to-rem(2px);
+      outline-offset: p-px-to-rem(1px);
+    }
+
+    &-prev {
+      left: p-px-to-rem(-50px);
+    }
+
+    &-next {
+      right: p-px-to-rem(-50px);
+    }
+  }
+
+  &__pagination {
+    position: relative;
+    text-align: center;
+    margin-top: $p-spacing-16;
+  }
+
+  .swiper {
+    position: unset;
+
+    &.swiper-initialized,
+    &.swiper-horizontal {
+      overflow: visible;
+
+      @include p-media-query('s') {
+        overflow: hidden;
+      }
+    }
+
+    .swiper-slide {
+      display: flex;
+      flex-direction: column;
+      height: unset;
+    }
+  }
+  .swiper-notification {
+    display: none;
+  }
+}

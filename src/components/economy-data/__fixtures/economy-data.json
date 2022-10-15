@@ -1,0 +1,251 @@
+{
+    "models": [
+        {
+            "label": "718 Boxster (NEDC)*",
+            "consumption": {
+                "label": "Consumption/Emissions*",
+                "formattedValue": "Fuel consumption combined: 8,7 – 8,1 l/100 km",
+                "unit": "l/100 km",
+                "value": "8,7 – 8,1"
+            },
+            "emission": {
+                "label": "",
+                "formattedValue": "CO2 emissions combined: 199 – 185 g/km",
+                "unit": "g/km",
+                "max": "199",
+                "min": "185"
+            },
+            "econsumption": {
+                "label": "",
+                "formattedValue": "",
+                "unit": "",
+                "value": ""
+            },
+            "efficiency": {
+                "label": "",
+                "value": "",
+                "image": ""
+            }
+        },
+        {
+            "label": "911 Carrera 4S Cabriolet (WLTP)*",
+            "consumption": {
+                "label": "Consumption/Emissions WLTP*",
+                "formattedValue": "Consumption combined: 11,1 – 10,4 l/100 km",
+                "unit": "l/100 km",
+                "value": "11,1 – 10,4"
+            },
+            "emission": {
+                "label": "",
+                "formattedValue": "CO2-emission combined (WLTP): 252 – 235 g/km",
+                "unit": "g/km",
+                "max": "252",
+                "min": "235"
+            },
+            "econsumption": {
+                "label": "",
+                "formattedValue": "",
+                "unit": "",
+                "value": ""
+            },
+            "efficiency": {
+                "label": "",
+                "value": "",
+                "image": ""
+            }
+        },
+        {
+            "label": "Cayenne GTS (NEDC)*",
+            "consumption": {
+                "label": "Consumption/Emissions*",
+                "formattedValue": "Fuel consumption combined: 11,4 – 11,2 l/100 km",
+                "unit": "l/100 km",
+                "value": "11,4 – 11,2"
+            },
+            "emission": {
+                "label": "",
+                "formattedValue": "CO2 emissions combined: 260 – 255 g/km",
+                "unit": "g/km",
+                "max": "260",
+                "min": "255"
+            },
+            "econsumption": {
+                "label": "",
+                "formattedValue": "",
+                "unit": "",
+                "value": ""
+            },
+            "efficiency": {
+                "label": "",
+                "value": "",
+                "image": ""
+            }
+        }
+    ],
+    "series": [
+        {
+            "label": "718 Cayman GT4 (NEDC)*",
+            "consumption": {
+                "label": "Consumption/Emissions*",
+                "formattedValue": "Fuel consumption combined: 10,9 – 10,2 l/100 km",
+                "unit": "l/100 km",
+                "value": "10,9 – 10,2"
+            },
+            "emission": {
+                "label": "",
+                "formattedValue": "CO2 emissions combined: 249 – 232 g/km",
+                "unit": "g/km",
+                "max": "249",
+                "min": "232"
+            },
+            "econsumption": {
+                "label": "",
+                "formattedValue": "",
+                "unit": "",
+                "value": ""
+            },
+            "efficiency": {
+                "label": "",
+                "value": "",
+                "image": ""
+            }
+        },
+        {
+            "label": "Panamera Models (NEDC)*",
+            "consumption": {
+                "label": "Consumption/Emissions*",
+                "formattedValue": "Fuel consumption combined: 11,1 – 8,6 l/100 km",
+                "unit": "l/100 km",
+                "value": "11,1 – 8,6"
+            },
+            "emission": {
+                "label": "",
+                "formattedValue": "CO2 emissions combined: 253 – 197 g/km",
+                "unit": "g/km",
+                "max": "253",
+                "min": "197"
+            },
+            "econsumption": {
+                "label": "",
+                "formattedValue": "",
+                "unit": "",
+                "value": ""
+            },
+            "efficiency": {
+                "label": "",
+                "value": "",
+                "image": ""
+            }
+        },
+        {
+            "label": "Cayenne Models (WLTP)*",
+            "consumption": {
+                "label": "Consumption/Emissions WLTP*",
+                "formattedValue": "Consumption weighted (PHEV model range): 4,1 – 3,1 l/100 km",
+                "unit": "l/100 km",
+                "value": "4,1 – 3,1"
+            },
+            "emission": {
+                "label": "",
+                "formattedValue": "CO2-emission combined (WLTP): 92 – 71 g/km",
+                "unit": "g/km",
+                "max": "92",
+                "min": "71"
+            },
+            "econsumption": {
+                "label": "",
+                "formattedValue": "Electrical consumption combined (weighted) (model range): 26,5 – 25,1 kWh/100 km",
+                "unit": "kWh/100 km",
+                "value": "26,5 – 25,1"
+            },
+            "efficiency": {
+                "label": "",
+                "value": "",
+                "image": ""
+            }
+        }
+    ],
+    "ranges": [
+        {
+            "label": "718 Cayman GT4 (NEDC)*",
+            "consumption": {
+                "label": "Consumption/Emissions*",
+                "formattedValue": "Fuel consumption combined: 10,9 – 10,2 l/100 km",
+                "unit": "l/100 km",
+                "value": "10,9 – 10,2"
+            },
+            "emission": {
+                "label": "",
+                "formattedValue": "CO2 emissions combined: 249 – 232 g/km",
+                "unit": "g/km",
+                "max": "249",
+                "min": "232"
+            },
+            "econsumption": {
+                "label": "",
+                "formattedValue": "",
+                "unit": "",
+                "value": ""
+            },
+            "efficiency": {
+                "label": "",
+                "value": "",
+                "image": ""
+            }
+        },
+        {
+            "label": "Panamera Models (NEDC)*",
+            "consumption": {
+                "label": "Consumption/Emissions*",
+                "formattedValue": "Fuel consumption combined: 11,1 – 8,6 l/100 km",
+                "unit": "l/100 km",
+                "value": "11,1 – 8,6"
+            },
+            "emission": {
+                "label": "",
+                "formattedValue": "CO2 emissions combined: 253 – 197 g/km",
+                "unit": "g/km",
+                "max": "253",
+                "min": "197"
+            },
+            "econsumption": {
+                "label": "",
+                "formattedValue": "",
+                "unit": "",
+                "value": ""
+            },
+            "efficiency": {
+                "label": "",
+                "value": "",
+                "image": ""
+            }
+        },
+        {
+            "label": "Cayenne Models (WLTP)*",
+            "consumption": {
+                "label": "Consumption/Emissions WLTP*",
+                "formattedValue": "Consumption weighted (PHEV model range): 4,1 – 3,1 l/100 km",
+                "unit": "l/100 km",
+                "value": "4,1 – 3,1"
+            },
+            "emission": {
+                "label": "",
+                "formattedValue": "CO2-emission combined (WLTP): 92 – 71 g/km",
+                "unit": "g/km",
+                "max": "92",
+                "min": "71"
+            },
+            "econsumption": {
+                "label": "",
+                "formattedValue": "Electrical consumption combined (weighted) (model range): 26,5 – 25,1 kWh/100 km",
+                "unit": "kWh/100 km",
+                "value": "26,5 – 25,1"
+            },
+            "efficiency": {
+                "label": "",
+                "value": "",
+                "image": ""
+            }
+        }
+    ]
+}

@@ -1,0 +1,66 @@
+@mixin normalizeTag {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  max-width: 100%;
+  width: 100%;
+  padding: 0;
+}
+
+@mixin defaultComponentPadding {
+  padding: $p-spacing-16 0 $p-spacing-32 0;
+
+  @include p-media-query('s') {
+    padding: $p-spacing-32 0 $p-spacing-48 0;
+  }
+}
+
+@mixin defaultComponentMargin {
+  display: block;
+  margin: $p-spacing-16 0 $p-spacing-32 0;
+
+  @include p-media-query('s') {
+    margin: $p-spacing-32 0 $p-spacing-48 0;
+  }
+}
+
+* {
+  font-family: $p-font-family;
+}
+
+body {
+  margin: 0;
+}
+
+#wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+  footer {
+    margin-top: auto;
+  }
+}
+
+input,
+textarea,
+button,
+select,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  text-decoration: none;
+}
+
+.disable-scroll {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+body.on-page-edit {
+  overflow: auto !important;
+}

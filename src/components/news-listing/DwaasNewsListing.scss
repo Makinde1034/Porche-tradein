@@ -1,0 +1,79 @@
+@import '/@/styles/normalize';
+@import '/@/styles/shared/margins';
+
+.news-listing {
+  min-height: 100%;
+  background: $p-color-background-surface;
+
+  &__container {
+    padding-top: p-px-to-rem(38px);
+
+    @include p-media-query('l') {
+      padding-top: p-px-to-rem(60px);
+    }
+  }
+
+  &__tile {
+    background: $p-color-background-default;
+    margin: $p-spacing-32 0;
+
+    &-wrapper {
+      position: relative;
+      flex-direction: column;
+      max-height: 100%;
+      overflow: hidden;
+    }
+  }
+
+  &__image {
+    &-picture {
+      width: 100%;
+      height: auto;
+    }
+
+    &-highlighted {
+      img {
+        width: 100%;
+        height: p-px-to-rem(358px);
+        overflow: hidden;
+        object-fit: cover;
+
+        @include p-media-query('l') {
+          height: p-px-to-rem(550px);
+        }
+      }
+    }
+  }
+
+  &__text {
+    background: linear-gradient(
+      -180deg,
+      rgba(0, 0, 0, 0) 4%,
+      rgba(0, 0, 0, 0.3) 37%,
+      rgb(0, 0, 0) 100%
+    );
+    width: 100%;
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: 0;
+
+    &-container {
+      margin: $p-spacing-32;
+
+      @include p-media-query('l') {
+        margin: $p-spacing-16;
+      }
+
+      &-highlight {
+        position: absolute;
+        margin: $p-spacing-32;
+        bottom: 0;
+      }
+    }
+
+    &-description {
+      margin: $p-spacing-8 0 $p-spacing-24;
+    }
+  }
+}

@@ -1,0 +1,248 @@
+{
+    "title": "Menu",
+    "icon": "pin",
+    "location": "Porsche Zentrum Stuttgart",
+    "dealer": {
+      "phoneLabel": "123123123",
+      "phone": "tel:123123123",
+      "phoneTarget": "",
+      "mailLabel": "your.name@porsche.de",
+      "mail": "mailto:your.name@porsche.de",
+      "mailTarget": "",
+      "address": [
+        "Stuttgart GmbH",
+        "Porscheplatz 9",
+        "70435 Stuttgart",
+        "Deutschland (Germany)",
+        ""
+      ],
+      "links": [
+        {
+          "href": "https://www.porsche.com/germany/",
+          "target": "",
+          "text": "Opening hours"
+        },
+        {
+          "href": "/dwaasdev/en/Forms_Service_Appointment",
+          "target": "",
+          "text": "Service Appointment Form"
+        },
+        {
+          "href": "https://www.porsche.com/usa/motorsportandevents/deliveryprograms/porscheexperiencecenterdelivery/orderingyournewporsche/",
+          "target": "_blank",
+          "text": "Buy vehicle online"
+        },
+        {
+          "href": "https://contact.porsche.com/uk/testdrive/",
+          "target": "_blank",
+          "text": "Request a Test Drive"
+        }
+      ]
+    },
+    "items": [
+      {
+        "href": "",
+        "target": "",
+        "hasSubNav": true,
+        "text": "Car Modules",
+        "subitems": [
+          {
+            "href": "/dwaasdev/en/Car-Inventory/Car-Inventory",
+            "target": "",
+            "text": "Car Inventory"
+          },
+          {
+            "href": "/dwaasdev/en/Car-Inventory/Car-Inventory---different-states",
+            "target": "",
+            "text": "Car Inventory different states"
+          },
+          {
+            "href": "/dwaasdev/en/Car-Inventory/Car-Inventory-with-filter",
+            "target": "",
+            "text": "Car Inventory with Filter"
+          }
+        ]
+      },
+      {
+        "href": "/dwaasdev/en/Forms_General_Request",
+        "target": "",
+        "hasSubNav": false,
+        "text": "General Request Form",
+        "subitems": []
+      },
+      {
+        "href": "/dwaasdev/en/Forms_Get_a_Quote",
+        "target": "",
+        "hasSubNav": false,
+        "text": "Get a Quote",
+        "subitems": []
+      },
+      {
+        "href": "/dwaasdev/en/Forms_Service_Appointment",
+        "target": "",
+        "hasSubNav": false,
+        "text": "Service Appointment",
+        "subitems": []
+      },
+      {
+        "href": "/dwaasdev/en/Forms_Test_Drive",
+        "target": "",
+        "hasSubNav": false,
+        "text": "Test Drive",
+        "subitems": []
+      },
+      {
+        "href": "/dwaasdev/en/P2_DealerSwitch",
+        "target": "",
+        "hasSubNav": false,
+        "text": "Dealer Switch",
+        "subitems": []
+      },
+      {
+        "href": "/dwaasdev/en/P2_News_Listing",
+        "target": "",
+        "hasSubNav": false,
+        "text": "News Listing",
+        "subitems": []
+      },
+      {
+        "href": "",
+        "target": "",
+        "hasSubNav": true,
+        "text": "Models Select",
+        "subitems": [
+          {
+            "href": "/dwaasdev/en/Models/718",
+            "target": "",
+            "text": "718"
+          },
+          {
+            "href": "/dwaasdev/en/Models/718-Cayman-GT4-RS",
+            "target": "",
+            "text": "718 Cayman GT4 RS"
+          },
+          {
+            "href": "/dwaasdev/en/Models/718-GT4",
+            "target": "",
+            "text": "718 GT4"
+          },
+          {
+            "href": "/dwaasdev/en/Models/718-Spyder",
+            "target": "",
+            "text": "718 Spyder"
+          },
+          {
+            "href": "/dwaasdev/en/Models/911",
+            "target": "",
+            "text": "911"
+          },
+          {
+            "href": "/dwaasdev/en/Models/911-GT3",
+            "target": "",
+            "text": "911 GT3"
+          },
+          {
+            "href": "/dwaasdev/en/Models/911-Turbo",
+            "target": "",
+            "text": "911 Turbo"
+          },
+          {
+            "href": "/dwaasdev/en/Models/Cayenne",
+            "target": "",
+            "text": "Cayenne"
+          },
+          {
+            "href": "/dwaasdev/en/Models/Macan",
+            "target": "",
+            "text": "Macan"
+          },
+          {
+            "href": "/dwaasdev/en/Models/Panamera",
+            "target": "",
+            "text": "Panamera"
+          },
+          {
+            "href": "/dwaasdev/en/Models/Taycan",
+            "target": "",
+            "text": "Taycan"
+          }
+        ]
+      },
+      {
+        "href": "",
+        "target": "",
+        "hasSubNav": true,
+        "text": "Forms",
+        "subitems": [
+          {
+            "href": "/dwaasdev/en/TGP3?/?mediacampaignid=TestUTM&utm_campaign=example:porscheSummmer2022&campaigncountry_region=es&utm_medium=paidsocial&campaignmodel=brandshaper&campaignsubtopic=panameraturbose-hybridsportturismo_&campaignlanguage=spanish&utm_source=_facebookbusinessmanager_&utm_content=_video_story_igstory4_discover_&campaignaudience=_drivenfemales_&campaigntype=_microaudiencename_branded_&campaignponumber=_po123456",
+            "target": "",
+            "text": "Form with UTM parameters"
+          },
+          {
+            "href": "/dwaasdev/en/GA-Forms-Test",
+            "target": "",
+            "text": "GA Form"
+          },
+          {
+            "href": "/dwaasdev/en/TGP3",
+            "target": "",
+            "text": "Submit Action"
+          },
+          {
+            "href": "/dwaasdev/en/TEST_National_Campaign",
+            "target": "",
+            "text": "National Campaign"
+          }
+        ]
+      },
+      {
+        "href": "",
+        "target": "",
+        "hasSubNav": true,
+        "text": "Submenu",
+        "subitems": [
+          {
+            "href": "https://dealertest.westeurope.cloudapp.azure.com/testiu/",
+            "target": "_blank",
+            "text": "TEST IU Site"
+          },
+          {
+            "href": "/dwaasdev/en/Car-Finder",
+            "target": "",
+            "text": "Car Finder"
+          },
+          {
+            "href": "https://dealertest.westeurope.cloudapp.azure.com/testju2/",
+            "target": "_blank",
+            "text": "TEST JU Site"
+          },
+          {
+            "href": "/dwaasdev/en/TEST_Tables",
+            "target": "",
+            "text": "Tables"
+          },
+          {
+            "href": "/dwaasdev/en/TGP2",
+            "target": "",
+            "text": "TGP2 Page"
+          },
+          {
+            "href": "/dwaasdev/en/TEST_SmartBlockers",
+            "target": "",
+            "text": "TEST SmartBlockers"
+          },
+          {
+            "href": "/dwaasdev/en/TEST_Performance",
+            "target": "",
+            "text": "TEST Performance"
+          },
+          {
+            "href": "/dwaasdev/en/TEST_Models_Page",
+            "target": "",
+            "text": "TEST Models Page"
+          }
+        ]
+      }
+    ]
+  }

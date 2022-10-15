@@ -1,0 +1,102 @@
+@import '/@/styles/z-index';
+@import '/@/styles/browser-specific';
+
+.main-navigation {
+  &__actions {
+    display: flex;
+    flex-direction: column;
+    margin: 0 7%;
+
+    @include p-media-query('l') {
+      flex-direction: row;
+      margin: auto $p-spacing-4 auto 0;
+      height: 100%;
+      align-items: center;
+      min-width: p-px-to-rem(255px);
+      max-width: p-px-to-rem(400px);
+      flex-grow: 0.9;
+
+      &:hover,
+      &:focus,
+      &-button:focus {
+        color: $p-color-state-active;
+
+        &::after {
+          content: '';
+          display: block;
+          position: absolute;
+          width: 100%;
+          height: p-px-to-rem(2.2px);
+          background: $p-color-state-active;
+          transform: translateY(61px);
+        }
+      }
+    }
+
+    &-button {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      background: none;
+      color: inherit;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      font-size: 1rem;
+
+      @include firefox-only {
+        &:focus-visible {
+          outline: #007aff auto 1px;
+          outline-offset: 1px;
+        }
+      }
+    }
+
+    &-divider {
+      display: none;
+
+      @include p-media-query('l') {
+        display: flex;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        height: p-px-to-rem(49px);
+      }
+    }
+
+    &-location {
+      margin: 0;
+      padding: $p-spacing-16 0;
+      border-top: p-px-to-rem(1px) solid $p-color-neutral-contrast-low;
+      font-size: $p-font-size-16;
+
+      @include p-media-query('l') {
+        margin: 0 auto 0 6%;
+        padding: 0;
+        border: none;
+        font-size: $p-font-size-20;
+      }
+
+      @include p-media-query('xl') {
+        margin: 0 auto 0 9%;
+      }
+
+      &-title {
+        width: 100%;
+        text-align: left;
+      }
+
+      &-icon {
+        width: p-px-to-rem(24px);
+        height: p-px-to-rem(24px);
+        margin-left: p-px-to-rem(-4px);
+
+        @include p-media-query('l') {
+          width: p-px-to-rem(32px);
+          height: p-px-to-rem(32px);
+        }
+      }
+    }
+  }
+}

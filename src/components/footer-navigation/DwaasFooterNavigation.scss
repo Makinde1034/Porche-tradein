@@ -1,0 +1,134 @@
+.footer-navigation {
+  background: $p-color-theme-dark-background-default;
+
+  &__content-wrapper {
+    display: flex;
+    flex-direction: column;
+
+    @include p-media-query('m') {
+      flex-direction: row-reverse;
+      justify-content: space-between;
+    }
+  }
+
+  &__content {
+    display: block;
+    padding: $p-spacing-24 0 p-px-to-rem(50px);
+
+    @include p-media-query('m') {
+      padding: $p-spacing-40 0 p-px-to-rem(50px);
+    }
+  }
+
+  &__language-switch {
+    transform: translateY(calc(-100% + #{$p-spacing-48}));
+
+    @include p-media-query('m') {
+      transform: translateY(calc(-100% + #{$p-spacing-40}));
+    }
+
+    &-wrapper {
+      height: $p-spacing-48;
+      margin-bottom: $p-spacing-16;
+
+      @include p-media-query('m') {
+        margin-left: $p-spacing-16;
+      }
+    }
+  }
+
+  &__copyright {
+    margin: 0 0 $p-spacing-24;
+
+    &-text {
+      margin-right: auto;
+
+      span,
+      a {
+        margin-right: $p-spacing-16;
+      }
+
+      a {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__disclaimer {
+    padding-top: p-px-to-rem(16px);
+
+    p {
+      margin-top: $p-spacing-24;
+    }
+
+    ol {
+      counter-reset: section;
+      display: block;
+      padding: 0;
+      margin: 0;
+
+      li {
+        display: block;
+        font-size: $p-font-size-small;
+        padding-left: p-px-to-rem(40px);
+        margin: 0;
+        list-style: none;
+
+        &::before {
+          position: absolute;
+          transform: translateX(p-px-to-rem(-24px));
+          counter-increment: section 1;
+          content: counters(section, '.') '.';
+        }
+
+        ol li::before {
+          transform: translateX(p-px-to-rem(-40px));
+          content: counters(section, '.');
+        }
+      }
+    }
+
+    ul {
+      display: block;
+      padding: 0;
+      margin: 0;
+
+      li {
+        position: relative;
+        font-size: $p-font-size-small;
+        padding-left: p-px-to-rem(24px);
+        margin: 0;
+        list-style: none;
+
+        &::before {
+          display: block;
+          content: '';
+          position: absolute;
+          left: 0;
+          top: calc(0.625em);
+          width: p-px-to-rem(4px);
+          height: p-px-to-rem(4px);
+          background-color: currentcolor;
+        }
+
+        ul li::before {
+          height: p-px-to-rem(1px);
+          width: p-px-to-rem(8px);
+          top: calc(0.75em);
+        }
+      }
+    }
+
+    a {
+      outline: none transparent;
+      color: inherit;
+      text-decoration: underline;
+      -webkit-transition: outline-color 0.24s ease, color 0.24s ease;
+      transition: outline-color 0.24s ease, color 0.24s ease;
+
+      &:hover {
+        color: $p-color-brand;
+      }
+    }
+  }
+}

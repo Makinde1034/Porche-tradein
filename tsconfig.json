@@ -1,0 +1,39 @@
+{
+  "compilerOptions": {
+    "outDir": "build",
+    "target": "esnext",
+    "useDefineForClassFields": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "strict": true,
+    "allowJs": true,
+    "checkJs": false,
+    "skipLibCheck": true,
+    "jsx": "preserve",
+    "sourceMap": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "baseUrl": ".",
+    "lib": ["esnext", "dom", "dom.Iterable"],
+    "types": ["vite/client", "node", "sanitize-html"],
+    "typeRoots": ["./node_modules/@types", "./src/types"],
+    "paths": {
+      "/@/*": ["./src/*"]
+    }
+  },
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
+  "exclude": [
+    "prettier.config.js",
+    "node_modules",
+    "src/**/*.e2e.ts",
+    "src/**/*.test.ts",
+    "src/**/*.story.vue"
+  ],
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS",
+      "skipLibCheck": true,
+      "resolveJsonModule": true
+    }
+  }
+}

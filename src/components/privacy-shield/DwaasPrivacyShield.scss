@@ -1,0 +1,100 @@
+.dwaas-privacy-shield {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100%;
+  height: fit-content;
+  display: flex;
+
+  &::before {
+    content: '';
+    width: p-px-to-rem(1px);
+    margin-left: p-px-to-rem(-1px);
+    float: left;
+    height: 0;
+    padding-bottom: 56.25%;
+  }
+
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+
+  &__background {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+
+    &-wrapper {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+    }
+  }
+
+  &__shader {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: rgba(14, 20, 24, 0.8);
+  }
+
+  &__content {
+    width: 100%;
+    min-height: 100%;
+    padding: $p-spacing-24;
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+
+    @include p-media-query('m') {
+      padding: $p-spacing-56;
+    }
+
+    &--loading {
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  &__title {
+    margin-bottom: $p-spacing-8;
+
+    @include p-media-query('m') {
+      margin-top: auto;
+    }
+  }
+
+  &__text {
+    margin-bottom: $p-spacing-24;
+  }
+
+  &__buttons {
+    margin-top: auto;
+
+    @include p-media-query('m') {
+      margin-top: 0;
+    }
+  }
+
+  &__button {
+    display: block;
+
+    &:not(:last-child) {
+      margin-bottom: $p-spacing-16;
+    }
+
+    @include p-media-query('m') {
+      display: inline-block;
+      margin: $p-spacing-16 $p-spacing-16 0 0;
+
+      &:not(:last-child) {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

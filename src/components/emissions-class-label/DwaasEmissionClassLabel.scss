@@ -1,0 +1,75 @@
+$classA: #009949;
+$classB: #4eaf46;
+$classC: #b9d137;
+$classD: #fff101;
+$classE: #f3b229;
+$classF: #e3672a;
+$classG: #d8232a;
+
+.emission-class {
+  min-width: p-px-to-rem(150px);
+  min-height: p-px-to-rem(140px);
+  margin-bottom: p-px-to-rem(16px);
+
+  &__arrow {
+    display: flex;
+    align-items: center;
+    margin-bottom: p-px-to-rem(2px);
+    height: p-px-to-rem(16px);
+
+    &--A {
+      background-color: $classA;
+      width: p-px-to-rem(48px);
+      clip-path: polygon(0% 0%, 2.5rem 0%, 100% 50%, 2.5rem 100%, 0% 100%);
+    }
+    &--B {
+      background-color: $classB;
+      width: p-px-to-rem(64px);
+      clip-path: polygon(0% 0%, 3.5rem 0%, 100% 50%, 3.5rem 100%, 0% 100%);
+    }
+    &--C {
+      background-color: $classC;
+      width: p-px-to-rem(80px);
+      clip-path: polygon(0% 0%, 4.5rem 0%, 100% 50%, 4.5rem 100%, 0% 100%);
+    }
+    &--D {
+      background-color: $classD;
+      width: p-px-to-rem(96px);
+      clip-path: polygon(0% 0%, 5.5rem 0%, 100% 50%, 5.5rem 100%, 0% 100%);
+    }
+    &--E {
+      background-color: $classE;
+      width: p-px-to-rem(112px);
+      clip-path: polygon(0% 0%, 6.5rem 0%, 100% 50%, 6.5rem 100%, 0% 100%);
+    }
+    &--F {
+      background-color: $classF;
+      width: p-px-to-rem(128px);
+      clip-path: polygon(0% 0%, 7.5rem 0%, 100% 50%, 7.5rem 100%, 0% 100%);
+    }
+    &--G {
+      background-color: $classG;
+      width: p-px-to-rem(144px);
+      clip-path: polygon(0% 0%, 8.5rem 0%, 100% 50%, 8.5rem 100%, 0% 100%);
+    }
+
+    &--active {
+      width: p-px-to-rem(144px);
+      height: p-px-to-rem(32px);
+      clip-path: polygon(0% 0%, 8rem 0%, 100% 50%, 8rem 100%, 0% 100%);
+
+      .emission-class__label {
+        font-size: p-px-to-rem(24px);
+      }
+    }
+  }
+
+  &__label {
+    margin-left: p-px-to-rem(4px);
+    font-size: p-px-to-rem(12px);
+  }
+
+  &__emission {
+    margin-left: p-px-to-rem(8px);
+  }
+}

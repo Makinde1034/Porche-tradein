@@ -1,0 +1,112 @@
+@import './_normalize';
+@import './_skeleton';
+@import './shared/_forms';
+@import './fonts';
+@import './analytics-breakpoints';
+@import './shared/_margins';
+
+section.component {
+  @include normalizeTag;
+  @include default-margins;
+
+  &.Main-Navigation-container {
+    margin: 0;
+    overflow: visible;
+  }
+
+  &.Model-Stage-Header-container {
+    margin: 0;
+  }
+
+  &.Stage-Header-container {
+    margin: 0;
+
+    .initial-container {
+      &--default {
+        aspect-ratio: 8 / 9;
+
+        @include p-media-query('s') {
+          aspect-ratio: 12 / 5;
+        }
+
+        @supports not (aspect-ratio: 8 / 9) {
+          &::before {
+            float: left;
+            padding-top: 112.5%;
+            content: '';
+
+            @include p-media-query('s') {
+              padding-top: 41.6666%;
+            }
+          }
+
+          &::after {
+            display: block;
+            content: '';
+            clear: both;
+          }
+        }
+      }
+
+      &--slim {
+        aspect-ratio: 4 / 3;
+
+        @include p-media-query('s') {
+          aspect-ratio: 24 / 5;
+        }
+
+        @supports not (aspect-ratio: 4 / 3) {
+          &::before {
+            float: left;
+            padding-top: 75%;
+            content: '';
+
+            @include p-media-query('s') {
+              padding-top: 20.8333%;
+            }
+          }
+
+          &::after {
+            display: block;
+            content: '';
+            clear: both;
+          }
+        }
+      }
+    }
+  }
+
+  &.Action-Bar-container {
+    margin: 0;
+  }
+
+  &.News-Listing-container {
+    margin: 0;
+  }
+
+  &.News-Detail-container {
+    margin-top: 0;
+  }
+
+  &.Text-Element-container {
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+
+  &.Text-Picture-Element-container {
+    overflow: visible;
+  }
+
+  &.Chat-Feature-container {
+    margin: 0;
+  }
+
+  &.Footer-Navigation-container {
+    margin: 0;
+    overflow: visible;
+  }
+}
+
+.full-width-breaker {
+  margin: 0 -8%;
+}

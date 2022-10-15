@@ -1,0 +1,143 @@
+.model-stage-header {
+  &__wrapper {
+    position: relative;
+    width: 100%;
+  }
+
+  &__image {
+    display: block;
+    position: relative;
+    aspect-ratio: 3 / 4;
+
+    @include p-media-query('m') {
+      height: p-px-to-rem(800px);
+      width: 100%;
+    }
+
+    @supports not (aspect-ratio: 3 / 4) {
+      &::before {
+        float: left;
+        padding-top: 133.3333%;
+        content: '';
+
+        @include p-media-query('m') {
+          padding-top: p-px-to-rem(800px);
+        }
+      }
+
+      &::after {
+        display: block;
+        content: '';
+        clear: both;
+      }
+    }
+
+    img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__shader {
+    position: absolute;
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.8) 0%,
+      rgba(0, 0, 0, 0.3) 18.5%,
+      rgba(0, 0, 0, 0) 50%,
+      rgba(0, 0, 0, 0.3) 81.5%,
+      rgba(0, 0, 0, 0.8) 100%
+    );
+    width: 100%;
+    height: 100%;
+    top: 0;
+
+    @include p-media-query('m') {
+      background: linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.8) 0%,
+        rgba(0, 0, 0, 0.3) 28.5%,
+        rgba(0, 0, 0, 0) 80%
+      );
+    }
+  }
+
+  &__content {
+    position: absolute;
+    top: 0;
+    height: 100%;
+
+    @include p-media-query('m') {
+      top: 0;
+      bottom: 0;
+      margin: auto 0;
+      height: fit-content;
+    }
+  }
+
+  &__headline {
+    margin: p-px-to-rem(52px) 0 $p-spacing-8;
+
+    @include p-media-query('m') {
+      margin-top: 0;
+    }
+  }
+
+  &__subline {
+    margin-bottom: $p-spacing-24;
+    max-width: 50%;
+  }
+
+  &__price {
+    bottom: p-px-to-rem(120px);
+    position: absolute;
+
+    @include p-media-query('m') {
+      bottom: initial;
+      position: relative;
+    }
+  }
+
+  &__car-info-container {
+    display: flex;
+    margin: p-px-to-rem(18px) 0 p-px-to-rem(78px);
+  }
+
+  &__button {
+    margin-top: $p-spacing-24;
+    position: absolute;
+    bottom: p-px-to-rem(38px);
+    width: 92%;
+
+    @include p-media-query('m') {
+      width: auto;
+      position: relative;
+      bottom: initial;
+      margin-top: $p-spacing-32;
+    }
+
+    &-link {
+      width: 100%;
+
+      @include p-media-query('m') {
+        width: auto;
+      }
+    }
+  }
+}
+
+.car-info-container {
+  &__wrapper {
+    white-space: nowrap;
+    vertical-align: middle;
+  }
+
+  &__text {
+    display: inline-block;
+    max-width: p-px-to-rem(200px);
+    margin: 0 p-px-to-rem(42px) 0 p-px-to-rem(10px);
+    white-space: normal;
+  }
+}

@@ -1,0 +1,38 @@
+.team-member {
+  background-color: $p-color-theme-dark-neutral-contrast-high;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin-bottom: $p-spacing-72;
+
+  &__img {
+    display: flex;
+    flex: 1;
+
+    @media not all and (min-resolution: 0.001dpcm) {
+      @supports (-webkit-appearance: none) and (stroke-color: transparent) {
+        display: block;
+        flex: none;
+      }
+    }
+  }
+
+  &__content {
+    padding: $p-spacing-32;
+    flex: 1;
+  }
+
+  &__title {
+    line-height: p-px-to-rem(30px);
+  }
+
+  &__link {
+    margin-top: p-px-to-rem(2px);
+    width: fit-content;
+    word-break: break-all;
+  }
+
+  &__subtitle {
+    margin-bottom: p-px-to-rem(8px);
+  }
+}

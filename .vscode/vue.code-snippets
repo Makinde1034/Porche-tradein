@@ -1,0 +1,49 @@
+{
+  "Dwaas vue3 component": {
+    "prefix": "dwaas-vue-component",
+    "body": [
+      "<script>",
+      "import { useBootstrapper } from '/@/composables';",
+      "",
+      "export default {",
+      "  name: 'Dwaas${1:AwesomeComponent}',",
+      "  setup() {",
+      "    const { el } = useBootstrapper();",
+      "",
+      "    return {",
+      "      el,",
+      "    };",
+      "  },",
+      "};",
+      "</script>",
+      "<template>",
+      "  <div ref=\"el\" class=\"${2:awesome-component}\">",
+      "  </div>",
+      "</template>",
+      "",
+      "<style lang=\"scss\" src=\"./Dwaas${1:AwesomeComponent}.scss\"></style>",
+      ""
+    ],
+    "description": "Dwaas vue3 component"
+  },
+  "Dwaas Story": {
+    "prefix": "dwaas-vue-story",
+    "body": [
+      "<script setup lang=\"ts\">",
+      "import { reactive } from 'vue';",
+      "",
+      "const state = reactive({",
+      "  ${1}",
+      "});",
+      "</script>",
+      "<template>",
+      "  <Story title=\"v2/modules/${2}\" icon=\"${3:simple-icons:porsche}\">",
+      "    <Variant title=\"Playground\">",
+      "      ${4}",
+      "    </Variant>",
+      "  </Story>",
+      "</template>"
+    ],
+    "description": "Dwaas Story"
+  }
+}

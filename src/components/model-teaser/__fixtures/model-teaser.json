@@ -1,0 +1,229 @@
+{
+    "headline": "Model Series",
+    "models": [
+        {
+          "images": [
+            {
+              "src": "https://prod.dwaas.porsche.com//-/media/Project/DealerWebsites/Canada/Calgary/Used-Cars/ZZ08MODIX0052_low.jpg?rev=ec9ad9e57451465dadb14c46bb55b71c",
+              "alt": "Range 1",
+              "width": "2048",
+              "height": "1538"
+            },
+            {
+              "src": "https://prod.dwaas.porsche.com//-/media/Project/DealerWebsites/Canada/Calgary/Used-Cars/CT07MODIX0002_low.jpg?rev=a3cc84d191004cefb4f0c3393e989c07",
+              "alt": "Range 2",
+              "width": "2048",
+              "height": "1046"
+            },
+            {
+              "src": "https://prod.dwaas.porsche.com//-/media/Project/DealerWebsites/Canada/Calgary/Used-Cars/CT07MODIX0001_low.jpg?rev=17542991b9d34355b16513634a67e086",
+              "alt": "Range1",
+              "width": "2048",
+              "height": "1037"
+            }
+          ],
+          "title": "Certified Pre-Owned",
+          "description": "Porsche Approved 111 - Point Inspection &amp; Warranty",
+          "price": "",
+          "buttons": [
+            {
+              "href": "https://finder.porsche.com/ca/en_CA/kiosk/search/list?porscheCenterKeys=3061&amp;vehicleFilterType=PREOWNED",
+              "target": "_blank",
+              "text": "Find cars in stock"
+            }
+          ]
+        },
+        {
+          "images": [
+            {
+              "src": "https://prod.dwaas.porsche.com//-/media/Project/DealerWebsites/SharedDealersWebsite/Model-Teaser/718/BX21I3KOX0005_rgb.jpg?rev=034b7f8ad88d417687be5167afcc3718",
+              "alt": "",
+              "width": "3840",
+              "height": "2160"
+            },
+            {
+              "src": "https://prod.dwaas.porsche.com//-/media/Project/DealerWebsites/SharedDealersWebsite/Model-Teaser/718/BC19MODOX0011_rgb.jpg?rev=b16943740ab445dea7026cc8228da969",
+              "alt": "",
+              "width": "3840",
+              "height": "2160"
+            },
+            {
+              "src": "https://prod.dwaas.porsche.com//-/media/Project/DealerWebsites/SharedDealersWebsite/Model-Teaser/718/BX20I3GOX0001_rgb.jpg?rev=4cfdc3591ac54260b75983d4b688d622",
+              "alt": "",
+              "width": "3840",
+              "height": "2160"
+            }
+          ],
+          "title": "718",
+          "description": "For the sport of it.",
+          "price": "",
+          "buttons": [
+            {
+              "href": "https://finder.porsche.com/ca/en_CA/kiosk/search/list?modelSeriesKeys=718&amp;porscheCenterKeys=3061",
+              "target": "_blank",
+              "text": "Find cars in stock"
+            }
+          ]
+        },
+        {
+          "images": [
+            {
+              "src": "https://prod.dwaas.porsche.com//-/media/Project/DealerWebsites/SharedDealersWebsite/Model-Teaser/911/CZ20V03OX0004_rgb.jpg?rev=be5f195ff57f40bbb3e195a65edaf1ce",
+              "alt": "",
+              "width": "3840",
+              "height": "2160"
+            },
+            {
+              "src": "https://prod.dwaas.porsche.com//-/media/Project/DealerWebsites/SharedDealersWebsite/Model-Teaser/911/VM20_2760.jpg?rev=bcac42b97c93410382bf1f460cac0ba1",
+              "alt": "",
+              "width": "2048",
+              "height": "1536"
+            },
+            {
+              "src": "https://prod.dwaas.porsche.com//-/media/Project/DealerWebsites/SharedDealersWebsite/Model-Teaser/911/CZ21V00OX0010_rgb.jpg?rev=76e8f36fbc0c4bc5b83b7ba82c32b4e4",
+              "alt": "",
+              "width": "3840",
+              "height": "2160"
+            }
+          ],
+          "title": "911",
+          "description": "Find cars in  stock",
+          "price": "",
+          "buttons": [
+            {
+              "href": "https://finder.porsche.com/ca/en_CA/kiosk/search/list?modelSeriesKeys=911&amp;porscheCenterKeys=3061",
+              "target": "_blank",
+              "text": "Find cars in stock"
+            }
+          ]
+        },
+        {
+          "images": [
+            {
+              "src": "https://prod.dwaas.porsche.com//-/media/Project/DealerWebsites/SharedDealersWebsite/Model-Teaser/Taycan/TA20Q2EOX0005_01_rgb.jpg?rev=2e8b1951bc2348e0bfc87f7e6f837ecc",
+              "alt": "",
+              "width": "3840",
+              "height": "2160"
+            },
+            {
+              "src": "https://prod.dwaas.porsche.com//-/media/Project/DealerWebsites/SharedDealersWebsite/Model-Teaser/Taycan/TA20Q2DOX0010_rgb.jpg?rev=417313478e9f421d96c36a500283b169",
+              "alt": "",
+              "width": "3840",
+              "height": "2160"
+            },
+            {
+              "src": "https://prod.dwaas.porsche.com//-/media/Project/DealerWebsites/SharedDealersWebsite/Model-Teaser/Taycan/TA20Q2AOX0001_rgb.jpg?rev=f9f7fe61a8cd4e8ab21ac7abc563da62",
+              "alt": "",
+              "width": "3840",
+              "height": "2160"
+            }
+          ],
+          "title": "Taycan",
+          "description": "Soul, electrified.",
+          "price": "",
+          "buttons": [
+            {
+              "href": "https://finder.porsche.com/ca/en_CA/kiosk/search/list?modelSeriesKeys=taycan&amp;porscheCenterKeys=3061",
+              "target": "_blank",
+              "text": "Find cars in stock"
+            }
+          ]
+        },
+        {
+          "images": [
+            {
+              "src": "https://prod.dwaas.porsche.com//-/media/Project/DealerWebsites/SharedDealersWebsite/Model-Teaser/Panamera/PA21P4AOX0002_KV_rgb.jpg?rev=9b0a0effb05d4437abf2700bc98f2c57",
+              "alt": "",
+              "width": "3840",
+              "height": "2160"
+            },
+            {
+              "src": "https://prod.dwaas.porsche.com//-/media/Project/DealerWebsites/SharedDealersWebsite/Model-Teaser/Panamera/PA21P4LOX0004_rgb.jpg?rev=dfc5425b4b064420ad53fc1c93534c73",
+              "alt": "",
+              "width": "3840",
+              "height": "2160"
+            },
+            {
+              "src": "https://prod.dwaas.porsche.com//-/media/Project/DealerWebsites/SharedDealersWebsite/Model-Teaser/Panamera/VM20_5096.jpg?rev=e59581657e2744c485e3abfc64175243",
+              "alt": "",
+              "width": "2048",
+              "height": "1536"
+            }
+          ],
+          "title": "Panamera",
+          "description": "Courage changes everything",
+          "price": "",
+          "buttons": [
+            {
+              "href": "https://finder.porsche.com/ca/en_CA/kiosk/search/list?modelSeriesKeys=panamera&amp;porscheCenterKeys=3061",
+              "target": "_blank",
+              "text": "Find cars in stock"
+            }
+          ]
+        },
+        {
+          "images": [
+            {
+              "src": "https://prod.dwaas.porsche.com//-/media/Project/DealerWebsites/SharedDealersWebsite/Model-Teaser/Macan/MA20T2EOX0002_rgb.jpg?rev=d1cea5089005484e83ad78990034ce0a",
+              "alt": "",
+              "width": "3840",
+              "height": "2160"
+            },
+            {
+              "src": "https://prod.dwaas.porsche.com//-/media/Project/DealerWebsites/SharedDealersWebsite/Model-Teaser/Macan/Macan-Turbo.jpg?rev=04237a266214476e8fb587b7e886e63e",
+              "alt": "",
+              "width": "2048",
+              "height": "1535"
+            },
+            {
+              "src": "https://prod.dwaas.porsche.com//-/media/Project/DealerWebsites/SharedDealersWebsite/Model-Teaser/Macan/MA19T2BOX0004_rgb.jpg?rev=80828f3e626e43c5a96ac4f828cba669",
+              "alt": "",
+              "width": "3840",
+              "height": "2160"
+            }
+          ],
+          "title": "Macan",
+          "description": "Choose thrilling.",
+          "price": "",
+          "buttons": [
+            {
+              "href": "https://finder.porsche.com/ca/en_CA/kiosk/search/list?modelSeriesKeys=macan&amp;porscheCenterKeys=3061",
+              "target": "_blank",
+              "text": "Find cars in stock"
+            }
+          ]
+        },
+        {
+          "images": [
+            {
+              "src": "https://prod.dwaas.porsche.com//-/media/Project/DealerWebsites/SharedDealersWebsite/Model-Teaser/Cayenne/TE19J4DOX0003_rgb.jpg?rev=7ef822648a9f4e23a7c39e9264a331dd",
+              "alt": "",
+              "width": "3840",
+              "height": "2160"
+            },
+            {
+              "src": "https://prod.dwaas.porsche.com//-/media/Project/DealerWebsites/SharedDealersWebsite/Model-Teaser/Cayenne/CY21J4QOX0003_01_rgb.jpg?rev=eac1415326444cae8fd3e91cfe528ea4",
+              "alt": "",
+              "width": "3840",
+              "height": "2160"
+            },
+            {
+              "src": "https://prod.dwaas.porsche.com//-/media/Project/DealerWebsites/SharedDealersWebsite/Model-Teaser/Cayenne/VM19_2843.jpg?rev=143243f8655c4ee282bb428f01f72bb9",
+              "alt": "",
+              "width": "2048",
+              "height": "1528"
+            }
+          ],
+          "title": "Cayenne",
+          "description": "Sportscar together.",
+          "price": "",
+          "buttons": [
+            {
+              "href": "https://finder.porsche.com/ca/en_CA/kiosk/search/list?modelSeriesKeys=cayenne&amp;porscheCenterKeys=3061",
+              "target": "_blank",
+              "text": "Find cars in stock"
+            }
+          ]
+        }
+      ]
+}

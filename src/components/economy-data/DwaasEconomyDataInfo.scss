@@ -1,0 +1,32 @@
+.economy-data-info {
+  display: flex;
+  margin-bottom: p-px-to-rem(8px);
+
+  &:not(:last-of-type) {
+    margin-right: p-px-to-rem(20px);
+  }
+
+  &__label {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    margin-left: p-px-to-rem(6px);
+  }
+
+  &__icon {
+    width: p-px-to-rem(40px);
+    height: p-px-to-rem(40px);
+    border: p-px-to-rem(1px) solid;
+    border-radius: 50%;
+    display: flex;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    font-style: normal;
+  }
+
+  &__value,
+  &__unit {
+    white-space: nowrap;
+  }
+}

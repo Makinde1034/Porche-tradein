@@ -1,0 +1,30 @@
+@import '/@/styles/z-index';
+
+.main-navigation {
+  &__logo {
+    @include z-index(skeleton);
+
+    width: p-px-to-rem(108px);
+    height: p-px-to-rem(76px);
+    background: $p-color-background-default;
+    border: p-px-to-rem(1px) solid $p-color-neutral-contrast-low;
+    border-top: none;
+    position: relative;
+    margin-left: 5%;
+    flex-shrink: 0;
+
+    img {
+      width: 100%;
+      height: auto;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+    }
+
+    @include p-media-query('l') {
+      width: p-px-to-rem(137px);
+      height: p-px-to-rem(138px);
+    }
+  }
+}

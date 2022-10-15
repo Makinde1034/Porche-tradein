@@ -1,0 +1,192 @@
+@import '/@/styles/z-index';
+@import '/@/styles/browser-specific';
+
+.main-navigation {
+  display: flex;
+  flex-direction: row;
+  min-height: p-px-to-rem(62px);
+  max-height: p-px-to-rem(63px);
+  border-bottom: p-px-to-rem(1px) solid $p-color-neutral-contrast-low;
+
+  @include p-media-query('l') {
+    min-height: p-px-to-rem(124px);
+    max-height: p-px-to-rem(124px);
+    position: relative;
+  }
+
+  &__wrapper {
+    display: none;
+
+    @include p-media-query('l') {
+      display: flex;
+      flex-direction: row;
+      flex-grow: 1;
+    }
+  }
+
+  &__container {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    margin: p-px-to-rem(75px) 7% 0;
+
+    @include p-media-query('l') {
+      flex-direction: row;
+      margin: 0 0 0 1.5%;
+      align-items: flex-end;
+    }
+
+    li {
+      list-style: none;
+    }
+  }
+
+  &__button {
+    margin: auto p-px-to-rem(28px) auto auto;
+    display: flex;
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+
+    @include p-media-query('l') {
+      display: none;
+    }
+
+    &:focus {
+      outline: $p-color-state-focus solid p-px-to-rem(2px);
+      outline-offset: p-px-to-rem(1px);
+    }
+
+    &:hover,
+    &:focus {
+      color: $p-color-state-active;
+
+      .link-hover div {
+        background-color: $p-color-state-active;
+      }
+    }
+
+    &--close {
+      position: absolute;
+      right: p-px-to-rem(16px);
+      top: p-px-to-rem(16px);
+      font-size: $p-spacing-32;
+      line-height: $p-spacing-16;
+      color: inherit;
+      padding: 0;
+      cursor: pointer;
+      border: 1px solid rgb(50, 54, 57);
+      transition: background-color var(--p-animation-hover-duration, 0.24s) ease,
+        border var(--p-animation-hover-duration, 0.24s) ease,
+        color var(--p-animation-hover-duration, 0.24s) ease;
+      outline: transparent solid 1px;
+      outline-offset: 2px;
+      color: rgb(0, 0, 0);
+      background-color: transparent;
+      height: p-px-to-rem(48px);
+      width: p-px-to-rem(48px);
+
+      @include p-media-query('l') {
+        display: none;
+      }
+
+      &:hover {
+        color: rgb(255, 255, 255);
+        background-color: rgb(21, 23, 24);
+        border-color: rgb(21, 23, 24);
+      }
+
+      &:focus {
+        outline: $p-color-state-focus solid p-px-to-rem(2px);
+        outline-offset: p-px-to-rem(1px);
+      }
+    }
+
+    &--open {
+      margin-left: p-px-to-rem(12px);
+      background: none;
+      color: inherit;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+
+      div {
+        width: p-px-to-rem(20px);
+        height: p-px-to-rem(2px);
+        background-color: $p-color-default;
+        margin: p-px-to-rem(5px) 0;
+      }
+    }
+  }
+
+  &__spacing {
+    flex-grow: 1;
+    max-width: 5%;
+
+    @include p-media-query('l') {
+      min-width: 1%;
+      flex-grow: 0;
+    }
+
+    @media (min-width: 1350px) {
+      min-width: 2%;
+      flex-grow: 0.1;
+    }
+
+    @media (min-width: 1500px) {
+      min-width: 3%;
+      flex-grow: 1;
+    }
+  }
+
+  .link-hover {
+    color: $p-color-default;
+
+    &:hover,
+    &:focus {
+      color: $p-color-state-active;
+    }
+  }
+}
+
+@keyframes slideOutRight {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    visibility: hidden;
+    transform: translate3d(100%, 0, 0);
+  }
+}
+
+.slideOutRight {
+  animation-name: slideOutRight;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translate3d(100%, 0, 0);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+    visibility: visible;
+  }
+}
+
+.slideInRight {
+  animation-name: slideInRight;
+}
+
+.animated {
+  animation-duration: 0.3s;
+  animation-fill-mode: both;
+
+  @include p-media-query('l') {
+    animation-duration: 0s;
+  }
+}

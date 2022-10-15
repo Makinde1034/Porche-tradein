@@ -1,0 +1,14 @@
+.google-map {
+  &__instance {
+    height: p-px-to-rem(270px);
+
+    @include p-media-query('m') {
+      height: 100%;
+    }
+  }
+
+  &-wrapper {
+    height: 100%;
+    width: 100%;
+  }
+}

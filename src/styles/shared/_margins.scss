@@ -1,0 +1,16 @@
+@mixin default-margins {
+  display: block;
+  margin: p-px-to-rem(40px) 0;
+
+  @include p-media-query('m') {
+    margin: p-px-to-rem(72px) 0;
+  }
+}
+
+@mixin default-headline-margin-bottom {
+  margin-bottom: $p-spacing-24;
+
+  @include p-media-query('m') {
+    margin-bottom: $p-spacing-48;
+  }
+}

@@ -1,0 +1,20 @@
+.car-finder-filters {
+  &__fieldset {
+    min-height: p-px-to-rem(200px);
+    margin-bottom: $p-spacing-48;
+  }
+
+  &__fieldset:not(:first-child) {
+    margin-top: $p-spacing-16;
+  }
+
+  &__model-dropdown {
+    .p-select-wrapper__label {
+      font-weight: bold;
+    }
+  }
+
+  &__checkbox {
+    margin-bottom: 1rem;
+  }
+}

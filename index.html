@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DwaaS - Playground</title>
+    <style>
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+      }
+      #app {
+      }
+      .component.unloaded {
+        visibility: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script>
+      /**
+       * global page info object which is defined
+       * on the global page and contains information
+       * about the current page.
+       */
+      window.PAGEINFO = {
+        hasContentNavigation: false,
+        cmsEnvironment: 'standalone',
+        isProd: false,
+      };
+
+      window.GlobalConsent = {
+        IsInitialized: false,
+        SettingsId: 'ipmlalhY8',
+        NewModalSDK: true,
+        Language: 'en',
+        Processor: {
+          vimeo: '6ZuPyprcf',
+          charingmap: 'jQdLLCpcf',
+          facebookSocialPlugin: 'dBP_UtW-R',
+          googleMaps: '8usyWUpaJ',
+          psyma: '-d_QE__xu',
+          youtube: '8tYO8Zdmz',
+          visualizer: 'kYSWuQpZx',
+          facebookVideos: 'zUpdIN5mg',
+          twitterAdvertising: 'oz__smlr_',
+          twitterPlugin: 'I_RDCXTVb',
+        },
+      };
+
+      window.ucPrivacyShield = {
+        bgimage: 'https://via.placeholder.com/1600x900/323639/323639',
+        consentunavailable: {
+          text: 'Die zur Anzeige notwendigen Inhalte konnten nicht geladen werden. Falls Sie einen AdBlocker verwenden, &#252;berpr&#252;fen Sie bitte dessen Einstellungen.',
+        },
+        consentservice: {
+          headline: 'Hinweis zur Datenverarbeitung',
+          text: 'Auf unserer Website stellen wir Inhalte von ###SERVICE### bereit. Um diese Inhalte zu sehen, m&#252;ssen Sie der Datenverarbeitung durch ###SERVICE### zustimmen.',
+          buttons: {
+            consent: { label: 'Zustimmen' },
+            privacy: {
+              label: 'Hinweise zum Datenschutz',
+              link: 'https://www.porsche.com/germany/privacy',
+            },
+          },
+        },
+      };
+    </script>
+    <!--     <script
+      src="https://www.porsche.com/redesign-scripts/vendor/udg-uc-sdk.min.js"
+      id="ipmlalhY8"
+      async
+    ></script> -->
+    <!-- <script type="module" src="/src/playground/main.js"></script> -->
+    <script type="module" src="/src/index.ts"></script>
+  </body>
+</html>

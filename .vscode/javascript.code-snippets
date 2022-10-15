@@ -1,0 +1,34 @@
+"Vue3 plugin structure": {
+    "prefix": "vue3-plugin",
+    "body": [
+        "import { inject } from 'vue';",
+        "export const ${1:plugin}Symbol = Symbol();",
+        "",
+        "export function use${2:Plugin}() {",
+        "const ${1:plugin} = inject(${1:plugin}Symbol);",
+        "if (!${1:plugin}) throw new Error('No ${2:plugin} provided!!!');",
+        "",
+        "return ${1:plugin};",
+        "}",
+        "",
+        "export function create${2:Plugin}(options = {}) {",
+        "const $${1:plugin} = {",
+            "options,",
+            "install(app) {",
+            "app.__VUE_${4:PLUGIN}_SYMBOL__ = ${1:plugin}Symbol;",
+            "app.provide(${1:plugin}Symbol, $${1:plugin});",
+            "app.config.globalProperties.$${1:plugin} = $${1:plugin};",
+            "",
+            "Object.defineProperty(app.config.globalProperties, '$${1:plugin}', {",
+            "	get() {",
+            "	return $${1:plugin};",
+            "	},",
+            "});",
+            "},",
+        "};"
+        "",
+        "return $${1:plugin}"
+        "}",
+        
+    ]
+}

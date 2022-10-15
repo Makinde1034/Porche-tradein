@@ -1,0 +1,75 @@
+@import '/@/styles/normalize';
+@import '/@/styles/shared/margins';
+
+.text-picture-element {
+  &__article {
+    display: flex;
+    flex-direction: column;
+    box-shadow: p-px-to-rem(3px) p-px-to-rem(3px) p-px-to-rem(10px) 0
+      rgba(0, 0, 0, 0.1);
+
+    @include p-media-query('l') {
+      flex-direction: row;
+    }
+  }
+
+  &__content {
+    padding: $p-spacing-24;
+    flex: 1;
+  }
+
+  &__image {
+    width: 100%;
+
+    @include p-media-query('l') {
+      width: 38.304%;
+      padding-top: 0;
+    }
+
+    img {
+      position: relative;
+      aspect-ratio: 4 / 3;
+
+      @include p-media-query('m') {
+        width: 100%;
+      }
+
+      @supports not (aspect-ratio: 4 / 3) {
+        &::before {
+          float: left;
+          padding-top: 75%;
+          content: '';
+
+          @include p-media-query('m') {
+            padding-top: p-px-to-rem(800px);
+          }
+        }
+
+        &::after {
+          display: block;
+          content: '';
+          clear: both;
+        }
+      }
+    }
+  }
+
+  &__headline,
+  &__text {
+    margin: 0 0 $p-spacing-24;
+
+    @include p-media-query('l') {
+      margin: 0 0 $p-spacing-8;
+    }
+  }
+
+  &__button {
+    display: block;
+    margin: $p-spacing-32 0 0;
+
+    @include p-media-query('l') {
+      margin: $p-spacing-16 0 0;
+      width: fit-content;
+    }
+  }
+}

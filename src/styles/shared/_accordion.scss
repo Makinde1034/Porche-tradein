@@ -1,0 +1,27 @@
+
+@mixin accordion($dividercolor: $p-color-theme-light-neutral-contrast-medium) {
+  &-tab {
+    position: relative;
+    padding: p-px-to-rem(10px) 0;
+    border-top: 1px solid $dividercolor;
+    cursor: pointer;
+
+    @include p-media-query('s') {
+      display: none;
+    }
+
+    &.last {
+      border-bottom: 1px solid $dividercolor;
+    }
+  }
+
+  &-text {
+    display: inline-block;
+  }
+
+  &-icon {
+    display: inline-block;
+    right: 0;
+    position: absolute;
+  }
+}

@@ -1,0 +1,7 @@
+@import '/@/styles/shared/margins';
+
+.headline-container {
+  @include default-headline-margin-bottom;
+
+  min-width: 100%;
+}

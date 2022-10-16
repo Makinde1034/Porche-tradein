@@ -2,10 +2,14 @@
 
 ```
 > git clone https://github.com/membagroup/pdwaas.git
+> cd pdwaas
 > npm i
-extract "@porsche.zip" to "node_modules"
+extract "@porsche.zip" & move into "node_modules"
 > yarn story:dev
 ```
+
+# Google Doc Notes
+https://docs.google.com/document/d/1ak_C1qD3l5kU_MgJq4idDFrpEPYOslp0gcsikvX6H6Q/edit?usp=sharing
 
 
 # DwaaS - Dealer as a Service

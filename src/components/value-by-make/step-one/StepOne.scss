@@ -1,0 +1,38 @@
+.wrapper {
+  padding: 20px 20px 0px 20px;
+
+  .input__wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    .input__box {
+      // width: 50%;
+
+      #input_style {
+        border: 1px solid #e5e5e5;
+      }
+    }
+  }
+
+  .button {
+    margin-top: 30px;
+  }
+
+  .buttonn {
+    width: 100px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .wrapper {
+    .input__wrap {
+      grid-template-columns: 1fr;
+    }
+
+    .button {
+      .buttonn {
+        width: 100%;
+      }
+    }
+  }
+}

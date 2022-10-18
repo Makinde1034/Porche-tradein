@@ -59,7 +59,6 @@ import teasersData from '/@/components/finder-teaser/__fixtures/teasers.json'
                 </template>
             </dwaas-finder-teaser>
         </div>
-
     </Story>
 </template>
 

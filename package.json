@@ -23,11 +23,13 @@
     "mitt": "^3.0.0",
     "node-html-parser": "^5.3.3",
     "normalize.css": "^8.0.1",
+    "pinia": "^2.0.23",
     "resize-observer-polyfill": "^1.5.1",
     "swiper": "^8.0.6",
     "vue": "^3.2.31",
     "vue-carousel": "^0.18.0",
-    "vue-intersect": "^3.0.0"
+    "vue-intersect": "^3.0.0",
+    "vuex": "^4.0.2"
   },
   "devDependencies": {
     "@histoire/plugin-screenshot": "^0.9.1",

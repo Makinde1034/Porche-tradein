@@ -1,5 +1,6 @@
-
+import { createPinia } from 'pinia';
 import { createApp } from 'vue';
+// import { pinia } from './store';
 import { VueSitecore, VueMasonryCSS } from './plugins';
 import FloatingVue from 'floating-vue';
 import './styles/_global.scss';
@@ -8,8 +9,13 @@ import { registerPlugins } from './registerPlugins';
 import './lazysizes';
 
 const app = createApp({});
+// app.use(pinia);
+
+const pinia = createPinia();
 
 registerPlugins(app);
+
+app.use(pinia);
 
 app.use(VueSitecore, { components: [] });
 
@@ -26,7 +32,6 @@ const preKeys = Array.from(
 const sitecoreScripts = Array.from(
   document.querySelectorAll('#wrapper script')
 ).map((el: Element) => el?.parentElement?.removeChild(el));
-
 
 registerComponents(app);
 

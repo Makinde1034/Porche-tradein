@@ -1,0 +1,30 @@
+.value {
+  padding: 20px 20px 20px 20px;
+
+  .value__info {
+    p {
+      font-size: 1.2rem;
+      line-height: 2rem;
+    }
+  }
+
+  .value__svg {
+    width: 50%;
+    padding-top: 20px;
+    margin: auto;
+
+    svg {
+      width: 100%;
+      // overflow: visible;
+    }
+  }
+
+  .value__buttons {
+    width: 100%;
+    display: flex;
+
+    .button {
+      margin-right: 20px;
+    }
+  }
+}

@@ -1,11 +1,173 @@
-.section {
-    margin: 4.5rem 0;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.section > p-select-wrapper,p-text-field-wrapper {
-    margin-top: 1.5rem;
+$grey-color: #c8cacb;
+
+@mixin center() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.submit {
-    margin-top: $p-spacing-24;
+.tradeIn__wrapper {
+  .tradeIn__header {
+    display: flex;
+    padding: 10px 20px 15px 20px;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #e3e4e5;
+    h3 {
+      font-size: 1.6rem;
+      font-weight: 600;
+    }
+    img {
+      height: 40px;
+      cursor: pointer;
+    }
+  }
+
+  .tradeIn__description {
+    padding: 20px 20px 0px 20px;
+
+    h3 {
+      font-size: 1.5rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+      font-weight: normal;
+      margin-top: 10px;
+    }
+  }
+
+  .tradeIn__stages {
+    padding: 20px 20px 0px 20px;
+    display: flex;
+
+    .tradeIn__stage {
+      display: flex;
+      align-items: center;
+      margin-right: 20px;
+
+      span {
+        height: 15px;
+        margin-right: 5px;
+        width: 15px;
+        background-color: black;
+        border-radius: 100%;
+        color: white;
+        font-size: 0.5rem;
+        @include center();
+      }
+    }
+
+    .tradeIn__completed__stage {
+      display: flex;
+      align-items: center;
+      margin-right: 20px;
+
+      span {
+        height: 15px;
+        margin-right: 5px;
+        width: 15px;
+        border: 1px solid $grey-color;
+        border-radius: 100%;
+        color: $grey-color;
+        font-size: 0.5rem;
+        @include center();
+      }
+      p {
+        color: $grey-color;
+      }
+    }
+
+    .tradeIn__checked {
+      display: flex;
+      align-items: center;
+      margin-right: 20px;
+
+      img {
+        height: 15px;
+        margin-right: 5px;
+      }
+    }
+  }
+
+  .tradeIn__value__options {
+    padding: 20px 20px 0px 20px;
+
+    p {
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    div {
+      display: flex;
+      align-items: center;
+
+      .tradeIn__radio {
+        margin-right: 20px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .tradeIn__stages {
+    overflow-x: auto;
+  }
+
+  .tradeIn__stages {
+    .tradeIn__stage {
+      span {
+        font-size: 0.5rem;
+      }
+
+      p {
+        font-size: 0.8rem;
+      }
+    }
+
+    .tradeIn__completed__stage {
+      span {
+        font-size: 0.5rem;
+      }
+      p {
+        color: $grey-color;
+        font-size: 0.8rem;
+      }
+    }
+
+    .tradeIn__checked {
+      display: flex;
+      align-items: center;
+      margin-right: 20px;
+
+      img {
+        height: 15px;
+        margin-right: 5px;
+      }
+    }
+  }
+
+  .tradeIn__value__options {
+    padding: 20px 20px 0px 20px;
+
+    p {
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    div {
+      display: flex;
+      align-items: center;
+
+      .tradeIn__radio {
+        margin-right: 20px;
+      }
+    }
+  }
 }

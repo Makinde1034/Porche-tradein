@@ -11,7 +11,12 @@
   <div v-if="activeStep === 3">
     <ContactSection />
   </div>
+  <div v-if="activeStep === 4">
+    Thank you
+  </div>
 </template>
+
+
 <script lang="ts">
 import { defineComponent, computed } from 'vue';
 import StepOne from './step-one/StepOne.story.vue';
@@ -56,4 +61,6 @@ export default defineComponent({
   },
 });
 </script>
+
+
 <style scoped lang="scss" src="./ValueByMake.scss"></style>

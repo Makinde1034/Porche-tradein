@@ -7,7 +7,7 @@
     <div class="step__options">
       <div>
         <p-checkbox-wrapper
-          label="Lorem ipsum dolor sit amet"
+          label="Lorem ipsum"
           hide-label="false"
         >
           <input type="checkbox" name="some-name" />
@@ -15,7 +15,7 @@
       </div>
       <div>
         <p-checkbox-wrapper
-          label="Lorem ipsum dolor sit amet"
+          label="Lorem ipsum"
           hide-label="false"
         >
           <input type="checkbox" name="some-name" />
@@ -23,7 +23,7 @@
       </div>
       <div>
         <p-checkbox-wrapper
-          label="Lorem ipsum dolor sit amet"
+          label="Lorem ipsum "
           hide-label="false"
         >
           <input type="checkbox" name="some-name" />
@@ -31,7 +31,7 @@
       </div>
       <div>
         <p-checkbox-wrapper
-          label="Lorem ipsum dolor sit amet"
+          label="Lorem ipsum "
           hide-label="false"
         >
           <input type="checkbox" name="some-name" />
@@ -64,9 +64,9 @@
               hide-label="false"
             >
               <input
-                v-model="valueBy"
+                v-model="condition"
                 type="radio"
-                :value="0"
+                value="Excellent"
                 name="Excellent"
               />
             </p-radio-button-wrapper>
@@ -90,9 +90,9 @@
               hide-label="false"
             >
               <input
-                v-model="valueBy"
+                v-model="condition"
                 type="radio"
-                :value="1"
+                value="Very Good"
                 name="Very Good"
               />
             </p-radio-button-wrapper>
@@ -116,7 +116,7 @@
               label="Good"
               hide-label="false"
             >
-              <input v-model="valueBy" type="radio" :value="1" name="Good" />
+              <input v-model="condition" type="radio" value="Good" name="Good" />
             </p-radio-button-wrapper>
           </td>
           <td id="td__grey" data-label="Due Date">
@@ -138,7 +138,7 @@
               label="Fair"
               hide-label="false"
             >
-              <input v-model="valueBy" type="radio" :value="1" name="Fair" />
+              <input v-model="condition" type="radio" value="Fair" name="Fair" />
             </p-radio-button-wrapper>
           </td>
           <td id="td__grey" data-label="Due Date">
@@ -154,7 +154,7 @@
       </tbody>
     </table>
     <div class="next__button">
-      <p-button @click="moveTonextStage" variant="primary" hide-label="{ base: true, s: false }"
+      <p-button class="button" @click="moveTonextStage" variant="primary" hide-label="{ s: false }"
         >Get your trade-in value</p-button
       >
     </div>
@@ -166,7 +166,7 @@ import { defineComponent, ref } from 'vue';
 export default defineComponent({
   data() {
     return {
-      valueBy: 0,
+      condition: "",
     };
   },
   methods: {

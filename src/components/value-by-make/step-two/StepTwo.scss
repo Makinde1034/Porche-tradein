@@ -10,11 +10,11 @@
   header {
     padding: 20px 20px 0px 20px;
     h3 {
-      font-size: 1.7rem;
+      font-size: 1.6rem;
       margin-bottom: 3px;
     }
     p {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
     }
   }
 
@@ -46,10 +46,10 @@
     padding-top: 20px;
     padding-bottom: 20px;
     h3 {
-      font-size: 2rem;
+      font-size: 1.6rem;
     }
     p {
-      font-size: 1.3rem;
+      font-size: 1.1rem;
     }
   }
 
@@ -97,6 +97,9 @@
   .next__button{
     margin-top: 20px;
     padding-left: 20px;
+    width: 100%;
+
+   
   }
 }
 
@@ -104,6 +107,16 @@
   .step {
     .step__options {
       grid-template-columns: 1fr 1fr;
+    }
+
+    .next__button{
+      margin-top: 20px;
+      padding-left: 20px;
+      width: 100%;
+  
+      button{
+        width: 100%;
+      }
     }
   }
 }

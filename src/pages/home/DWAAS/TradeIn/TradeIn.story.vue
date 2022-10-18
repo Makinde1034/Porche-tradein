@@ -53,7 +53,7 @@
             class="tradeIn__completed__stage"
           >
             <span>3</span>
-            <p>Results{{ parentActiveStep }}</p>
+            <p>Results</p>
           </div>
           <div class="tradeIn__checked" v-else>
             <img src="../../../../assets/images/check.svg" alt="" />
@@ -100,16 +100,14 @@
 </template>
 
 <script lang="ts">
-// import navigationData from '/@/components/main-navigation/__fixtures/navigation.json'
-// import stageHeaderData from '/@/components/stage-header/__fixtures/stage-header.json'
-// import teasersData from '/@/components/finder-teaser/__fixtures/teasers.json'
+
 import closeIcon from '../../../../assets/images/close_button.svg';
 import ValueByMake from '../../../../components/value-by-make/ValueByMake.story.vue';
 import ValueByVin from '../../../../components/value-by-vin/ValueByVin.story.vue';
 import { defineComponent, ref } from 'vue';
 
 export default defineComponent({
-  // type inference enabled
+ 
   components: { ValueByMake, ValueByVin },
   data() {
     return {

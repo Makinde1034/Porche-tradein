@@ -1,5 +1,5 @@
 <template lang="">
-  <form class="contact">
+  <form @submit.prevent="submitForm" class="contact">
     <header>
       <h3>My Kelley Blue Book®</h3>
       <p>2013 Mercedes XL, 123</p>
@@ -88,6 +88,18 @@
   </form>
 </template>
 <script>
-export default {};
+import { defineComponent } from 'vue';
+
+export default defineComponent({
+  // type inference enabled
+
+  methods: {
+    submitForm() {
+      this.increamentStep();
+    },
+  },
+
+  inject: ['step', 'data', 'increamentStep'],
+});
 </script>
 <style scoped lang="" src="./ContactSection.scss"></style>

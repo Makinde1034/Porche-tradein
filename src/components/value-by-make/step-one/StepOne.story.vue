@@ -55,7 +55,7 @@
         <p-text-field-wrapper label="Mileage">
           <input
             v-model="msg.mileage"
-            type="text"
+            type="number"
             name="some-name"
             placeholder="Please enter the current mileage"
           />
@@ -65,7 +65,8 @@
         <p-text-field-wrapper label="Zip Code">
           <input
             v-model="msg.zipCode"
-            type="text"
+            type="number"
+            maxlenght="5"
             name="Zip Code"
             placeholder="Please enter your zip code"
           />

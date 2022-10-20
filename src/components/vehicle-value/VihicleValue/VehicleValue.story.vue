@@ -13,18 +13,7 @@
       </p>
     </section>
     <section class="value__svg">
-      <svg overflow="scroll">
-        <text y="25">Your Kelley Blue Book®</text>
-        <text x="0" y="55" fill="black">
-          Below we have provided the Kelley Blue Book® Trade-in Range, which is
-          an expected value based on current market data and the information you
-          provided on the previous screens. You can use the below information to
-          provide guidance towards your down payment to assist you in your
-          financial calculation towards your next Porsche. Please proceed below
-          to submit a request to appraise your vehicle's value by an authorized
-          Porsche dealer.
-        </text>
-      </svg>
+      <img src="../../../assets/images/val.png" alt="" />
     </section>
     <section class="value__buttons">
       <p-button
@@ -43,6 +32,7 @@
 </template>
 <script>
 import { defineComponent, ref } from 'vue';
+// import  svg from '../../../assets/images/value_svg.svg'
 
 export default defineComponent({
   data() {

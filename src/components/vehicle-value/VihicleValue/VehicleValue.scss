@@ -9,13 +9,13 @@
   }
 
   .value__svg {
-    width: 50%;
-    padding-top: 20px;
+    padding: 20px 0px 20px 0px;
     margin: auto;
+    display: flex;
+    justify-content: center;
 
-    svg {
-      width: 100%;
-      // overflow: visible;
+    img {
+      height: 150px;
     }
   }
 
@@ -25,6 +25,18 @@
 
     .button {
       margin-right: 20px;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .value {
+    .value__buttons {
+      flex-direction: column;
+      .button {
+        margin-right: 0px;
+        margin-bottom: 20px;
+      }
     }
   }
 }

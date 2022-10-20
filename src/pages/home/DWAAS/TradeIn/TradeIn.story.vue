@@ -2,7 +2,8 @@
   <Story title="v2/pages/TradeIn" icon="ri:home-5-line">
     <div class="tradeIn__wrapper">
       <header class="tradeIn__header">
-        <h3>Trade-in Value</h3>
+        <h3 v-if="parentActiveStep === 4">Thank you</h3>
+        <h3 v-else>Trade-in Value</h3>
         <img src="../../../../assets/images/close_button.svg" alt="" />
       </header>
       <section class="tradeIn__description">
@@ -48,10 +49,7 @@
         </div>
         <!-- results -->
         <div>
-          <div
-            v-if="parentActiveStep < 2"
-            class="tradeIn__completed__stage"
-          >
+          <div v-if="parentActiveStep < 2" class="tradeIn__completed__stage">
             <span>3</span>
             <p>Results</p>
           </div>
@@ -100,14 +98,12 @@
 </template>
 
 <script lang="ts">
-
 import closeIcon from '../../../../assets/images/close_button.svg';
 import ValueByMake from '../../../../components/value-by-make/ValueByMake.story.vue';
 import ValueByVin from '../../../../components/value-by-vin/ValueByVin.story.vue';
 import { defineComponent, ref } from 'vue';
 
 export default defineComponent({
- 
   components: { ValueByMake, ValueByVin },
   data() {
     return {

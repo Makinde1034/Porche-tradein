@@ -1,9 +1,9 @@
 <template lang="">
   <div v-if="activeStep === 0">
-    <StepOne />
+    <StepOne :setVehicleId="setVehicleId" :setOptions="setOptions" />
   </div>
   <div v-if="activeStep === 1">
-    <StepTwo />
+    <StepTwo :vehicleId="vehicleId" :testOptions="options" />
   </div>
   <div v-if="activeStep === 2">
     <VehicleValue />
@@ -12,10 +12,9 @@
     <ContactSection />
   </div>
   <div v-if="activeStep === 4">
-    Thank you
+    <ThankYou />
   </div>
 </template>
-
 
 <script lang="ts">
 import { defineComponent, computed } from 'vue';
@@ -23,11 +22,12 @@ import StepOne from './step-one/StepOne.story.vue';
 import StepTwo from './step-two/StepTwo.story.vue';
 import VehicleValue from '../vehicle-value/VihicleValue/VehicleValue.story.vue';
 import ContactSection from '../contact-section/ContactSection.story.vue';
+import ThankYou from '../thank-you/ThankYou.story.vue';
 
 export default defineComponent({
   // type inference enabled
 
-  components: { StepOne, StepTwo, VehicleValue, ContactSection },
+  components: { StepOne, StepTwo, VehicleValue, ContactSection, ThankYou },
   props: ['hideOptionsIcon', 'setParentActiveStep'],
   data() {
     return {
@@ -41,8 +41,11 @@ export default defineComponent({
         mileage: '',
         zipCode: '',
       },
+      options: [],
+      vehicleId: '',
     };
   },
+
   methods: {
     incStep() {
       this.activeStep++;
@@ -50,17 +53,25 @@ export default defineComponent({
       this.hideOptionsIcon();
       this.setParentActiveStep();
     },
+    setOptions(data: []) {
+      this.options = data;
+    },
+    setVehicleId(id: String) {
+      this.vehicleId = id;
+    },
   },
+
   inject: ['step', 'data', 'increamentStep'],
+
   provide() {
     return {
       step: computed(() => this.activeStep),
       data: computed(() => this.vehicleData),
+      options: computed(() => this.options),
       increamentStep: this.incStep,
     };
   },
 });
 </script>
-
 
 <style scoped lang="scss" src="./ValueByMake.scss"></style>

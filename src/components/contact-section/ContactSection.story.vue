@@ -13,7 +13,7 @@
       class="contact__textarea"
       label="Your Message (Optional)"
       hide-label="false"
-    >
+    >``
       <textarea name="Your Message (Optional)"></textarea>
     </p-textarea-wrapper>
     <section class="input__wrap">

@@ -73,11 +73,12 @@
         </p-text-field-wrapper>
       </div>
       <div class="input__box">
-        <p-text-field-wrapper label="Zip Code">
+        <p-text-field-wrapper maxlength="5" label="Zip Code">
           <input
+            oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
             v-model="msg.zipCode"
             type="number"
-            maxlenght="5"
+            maxlength="5"
             name="Zip Code"
             placeholder="Please enter your zip code"
           />
@@ -96,13 +97,13 @@
   </form>
   <button @click="checkState">chect state</button>
 </template>
-<script>
+<script lang="ts">
 import { defineComponent, ref } from 'vue';
 import tradeInApi from '../../../core/tradeInApi';
 
 export default defineComponent({
   // type inference enabled
-  props: ['setOptions','setVehicleId'],
+  props: ['setOptions', 'setVehicleId'],
   components: {},
   data() {
     return {
@@ -211,7 +212,7 @@ export default defineComponent({
         if (newValue === this.vehicles[i].trimName) {
           this.vehicleId = this.vehicles[i].vehicleId;
           // capture vehicle id on parent component
-          this.setVehicleId(this.vehicles[i].vehicleId)
+          this.setVehicleId(this.vehicles[i].vehicleId);
           console.log(this.vehicles[i].vehicleId);
         }
       }
@@ -235,7 +236,7 @@ export default defineComponent({
       }
     },
     getColorsFromOptions() {
-      let colors = [];
+      let colors: Array<string> = [];
       for (let i = 0; i < this.allOptions.length; i++) {
         if (this.allOptions[i].optionType === 'Color') {
           colors.push(this.allOptions[i]);

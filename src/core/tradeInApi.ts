@@ -67,4 +67,12 @@ export default {
       }
     );
   },
+  getVin(vin: string) {
+    return fetch(`${BASE_URL}/vin/${vin}`, {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+     
+    });
+  },
 };

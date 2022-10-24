@@ -17,6 +17,28 @@
   </div>
 </template>
 <script>
-export default {};
+
+import { defineComponent, ref } from 'vue';
+
+
+export default defineComponent({
+  // type inference enabled
+  props: ['setOptions', 'setVehicleId'],
+  components: {},
+  data() {
+    
+    
+  },
+
+  methods: {
+  
+  },
+  computed: {
+    
+  },
+  inject: [ 'data', ],
+
+  
+});
 </script>
 <style lang="" src="./ThankYou.scss"></style>

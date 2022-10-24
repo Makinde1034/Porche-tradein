@@ -2,10 +2,7 @@
   <div class="step">
     <header>
       <h3>Your Vehicle Options</h3>
-      <p>
-        Which options are on your {{ vehicleInfo.year }} {{ vehicleInfo.make }}
-        {{ vehicleInfo.model }}
-      </p>
+      <p>Which options are on your</p>
     </header>
     <div class="step__options">
       <div v-for="(option, index) in truncatedOptions" :key="index">
@@ -28,10 +25,7 @@
       </p>
     </section>
     <section class="step__condition">
-      <h3>
-        What condition is your {{ vehicleInfo.year }} {{ vehicleInfo.make }}
-        {{ vehicleInfo.model }} in?
-      </h3>
+      <h3>What condition is your in?</h3>
       <p>Please select carefully, it will affect your car’s value.</p>
     </section>
     <table>
@@ -158,7 +152,7 @@
     </div>
   </div>
 </template>
-<script lang="ts">
+<script>
 import { defineComponent, ref } from 'vue';
 import tradeInApi from '../../../core/tradeInApi';
 
@@ -183,82 +177,86 @@ export default defineComponent({
       this.showMore = !this.showMore;
     },
 
-    captureDefaultSelectedOptionsOnRender() {
-      for (let i = 0; i < this.testOptions.length; i++) {
-        if (
-          this.testOptions[i].isTypical &&
-          this.testOptions[i].optionType === 'Option'
-        ) {
-          this.selectedoptions.push(this.testOptions[i].vehicleOptionId);
-        }
-      }
+    async getVin(){
+        const res = await tradeInApi.getVin()
+    }
 
-      console.log(this.selectedoptions);
-    },
+    // captureDefaultSelectedOptionsOnRender() {
+    //   for (let i = 0; i < this.testOptions.length; i++) {
+    //     if (
+    //       this.testOptions[i].isTypical &&
+    //       this.testOptions[i].optionType === 'Option'
+    //     ) {
+    //       this.selectedoptions.push(this.testOptions[i].vehicleOptionId);
+    //     }
+    //   }
 
-    async getTradeInValue() {
-      this.pending = true;
-      try {
-        const data = {
-          vehicleId: this.vehicleId,
-          mileage: this.vehicleInfo.mileage,
-          zipCode: this.vehicleInfo.zipCode,
-          optionIds: this.selectedoptions,
-        };
+    //   console.log(this.selectedoptions);
+    // },
 
-        const res = await tradeInApi.getTraeInValue(data);
-        const resJson = await res.json();
-        console.log(resJson);
+    // async getTradeInValue() {
+    //   this.pending = true;
+    //   try {
+    //     const data = {
+    //       vehicleId: this.vehicleId,
+    //       mileage: this.vehicleInfo.mileage,
+    //       zipCode: this.vehicleInfo.zipCode,
+    //       optionIds: this.selectedoptions,
+    //     };
 
-        this.getpriceAdvisory(resJson.toggles.priceAdvisorAPIKey);
-        this.pending = false;
-      } catch (err) {
-        console.log(err);
-      }
-    },
-    async getpriceAdvisory(apiKey: string) {
-      try {
-        const res = await tradeInApi.getPriceAdvisory(
-          apiKey,
-          this.vehicleId,
-          this.selectedoptions,
-          this.vehicleInfo.zipCode,
-          this.vehicleInfo.mileage,
-          this.condition
-        );
-        const resJson = await res.json();
-        this.increamentStep();
-        console.log(resJson);
-      } catch (err) {
-        console.log(err);
-        this.increamentStep();
-      }
-    },
+    //     const res = await tradeInApi.getTraeInValue(data);
+    //     const resJson = await res.json();
+    //     console.log(resJson);
+
+    //     this.getpriceAdvisory(resJson.toggles.priceAdvisorAPIKey);
+    //     this.pending = false;
+    //   } catch (err) {
+    //     console.log(err);
+    //   }
+    // },
+    // async getpriceAdvisory(apiKey) {
+    //   try {
+    //     const res = await tradeInApi.getPriceAdvisory(
+    //       apiKey,
+    //       this.vehicleId,
+    //       this.selectedoptions,
+    //       this.vehicleInfo.zipCode,
+    //       this.vehicleInfo.mileage,
+    //       this.condition
+    //     );
+    //     const resJson = await res.json();
+    //     this.increamentStep();
+    //     console.log(resJson);
+    //   } catch (err) {
+    //     console.log(err);
+    //     this.increamentStep();
+    //   }
+    // },
   },
-  computed: {
-    truncatedOptions() {
-      if (this.showMore === true) {
-        return this.getOnlyNameOptions;
-      } else {
-        return this.getOnlyNameOptions.slice(0, 10);
-      }
-    },
-    getOnlyNameOptions() {
-      let colors: Array<String> = [];
-      for (let i = 0; i < this.testOptions.length; i++) {
-        if (this.testOptions[i].optionType === 'Option') {
-          colors.push(this.testOptions[i]);
-        }
-      }
+  // computed: {
+  //   truncatedOptions() {
+  //     if (this.showMore === true) {
+  //       return this.getOnlyNameOptions;
+  //     } else {
+  //       return this.getOnlyNameOptions.slice(0, 10);
+  //     }
+  //   },
+  //   getOnlyNameOptions() {
+  //     let colors = [];
+  //     for (let i = 0; i < this.testOptions.length; i++) {
+  //       if (this.testOptions[i].optionType === 'Option') {
+  //         colors.push(this.testOptions[i]);
+  //       }
+  //     }
 
-      return colors;
-    },
-  },
-  inject: ['step', 'data', 'increamentStep', 'options'],
-  mounted() {
-    this.captureDefaultSelectedOptionsOnRender();
-    // console.log(this.testOptions, this.vehicleId);
-  },
+  //     return colors;
+  //   },
+  // },
+  // inject: ['step', 'data', 'increamentStep', 'options'],
+  // mounted() {
+  //   this.captureDefaultSelectedOptionsOnRender();
+  //   // console.log(this.testOptions, this.vehicleId);
+  // },
 });
 </script>
 <style lang="" src="./StepTwo.scss"></style>

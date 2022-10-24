@@ -2,7 +2,10 @@
   <form @submit.prevent="submitForm" class="contact">
     <header>
       <h3>My Kelley Blue Book®</h3>
-      <p>2013 Mercedes XL, 123</p>
+      <p>
+        {{ vehicleInfo.year }} {{ vehicleInfo.model }} {{ vehicleInfo.make }}
+        
+      </p>
       <p>
         Value trade-in range is $38,339 - $40,988, and my trade-in value is
         $39,664 <br />
@@ -13,7 +16,7 @@
       class="contact__textarea"
       label="Your Message (Optional)"
       hide-label="false"
-    >``
+      >``
       <textarea name="Your Message (Optional)"></textarea>
     </p-textarea-wrapper>
     <section class="input__wrap">
@@ -92,14 +95,18 @@ import { defineComponent } from 'vue';
 
 export default defineComponent({
   // type inference enabled
-
+  data() {
+    return {
+      vehicleInfo: this.data,
+    };
+  },
   methods: {
     submitForm() {
       this.increamentStep();
     },
   },
 
-  inject: ['step', 'data', 'increamentStep'],
+  inject: ['data'],
 });
 </script>
 <style scoped lang="" src="./ContactSection.scss"></style>

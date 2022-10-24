@@ -91,7 +91,10 @@
         />
       </section>
       <section v-if="valueBy === 1">
-        <ValueByVin />
+        <ValueByVin
+          :setParentActiveStep="setParentActiveStep"
+          :hideOptionsIcon="hideOptionsIcon"
+        />
       </section>
     </div>
   </Story>

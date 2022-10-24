@@ -22,7 +22,7 @@ import StepOne from './step-one/StepOne.story.vue';
 import StepTwo from './step-two/StepTwo.story.vue';
 import VehicleValue from '../vehicle-value/VihicleValue/VehicleValue.story.vue';
 import ContactSection from '../contact-section/ContactSection.story.vue';
-import ThankYou from '../thank-you/ThankYou.story.vue';
+import ThankYou from './thank-you/ThankYou.story.vue'
 
 export default defineComponent({
   // type inference enabled
@@ -33,7 +33,7 @@ export default defineComponent({
     return {
       activeStep: 0,
       vehicleData: {
-        year: '',
+        year: '', 
         make: '',
         model: '',
         trim: '',

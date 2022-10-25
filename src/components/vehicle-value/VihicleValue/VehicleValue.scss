@@ -14,9 +14,13 @@
     display: flex;
     justify-content: center;
 
-    img {
-      height: 150px;
+    iframe{
+      overflow: hidden;
+      height: 400px;
+      width: 100%;
+      border: none;
     }
+    
   }
 
   .value__buttons {

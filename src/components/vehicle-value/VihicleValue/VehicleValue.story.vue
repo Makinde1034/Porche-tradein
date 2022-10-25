@@ -13,7 +13,7 @@
       </p>
     </section>
     <section class="value__svg">
-      <img :src="priceAdvisoryUrl" alt="" />
+      <iframe scrolling="no" :src="priceAdvisoryUrl"></iframe>
     </section>
     <section class="value__buttons">
       <p-button

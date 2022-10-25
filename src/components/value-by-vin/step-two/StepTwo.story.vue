@@ -2,7 +2,7 @@
   <div class="step">
     <header>
       <h3>Your Vehicle Options</h3>
-      <p>Which options are on your</p>
+      <p>Which options are on your {{ vehicleData.trim }}</p>
     </header>
     <div class="step__options">
       <div v-for="(option, index) in truncatedOptions" :key="index">
@@ -152,111 +152,92 @@
     </div>
   </div>
 </template>
-<script>
+<script lang="ts">
+import { options } from 'floating-vue';
 import { defineComponent, ref } from 'vue';
 import tradeInApi from '../../../core/tradeInApi';
 
 export default defineComponent({
-  props: ['testOptions', 'vehicleId'],
+  props: ['vehicleData', 'options', 'incStep','setPriceAdvisoryUrl'],
   data() {
     return {
       condition: '',
       showMore: false,
-      vehicleInfo: this.data,
-      allOptions: this.options,
+      
       selectedoptions: [],
       pending: false,
     };
   },
   methods: {
     moveTonextStage() {
-      this.increamentStep();
+      this.incStep();
     },
 
     toggleShowMoreOptions() {
       this.showMore = !this.showMore;
     },
 
-    async getVin(){
-        const res = await tradeInApi.getVin()
-    }
+    captureDefaultSelectedOptionsOnRender() {
+      for (let i = 0; i < this.options.length; i++) {
+        if (
+          this.options[i].isTypical &&
+          this.options[i].optionType === 'Option'
+        ) {
+          this.selectedoptions.push(this.options[i].vehicleOptionId);
+        }
+      }
+    },
+    async getTradeInValue() {
+      this.pending = true;
+      try {
+        const data = {
+          vehicleId: this.vehicleData.vehicleId,
+          mileage: Number(this.vehicleData.mileage),
+          zipCode: this.vehicleData.zipCode,
+          optionIds: this.selectedoptions,
+        };
 
-    // captureDefaultSelectedOptionsOnRender() {
-    //   for (let i = 0; i < this.testOptions.length; i++) {
-    //     if (
-    //       this.testOptions[i].isTypical &&
-    //       this.testOptions[i].optionType === 'Option'
-    //     ) {
-    //       this.selectedoptions.push(this.testOptions[i].vehicleOptionId);
-    //     }
-    //   }
+        const res = await tradeInApi.getTraeInValue(data);
+        const resJson = await res.json();
+        console.log(resJson);
 
-    //   console.log(this.selectedoptions);
-    // },
-
-    // async getTradeInValue() {
-    //   this.pending = true;
-    //   try {
-    //     const data = {
-    //       vehicleId: this.vehicleId,
-    //       mileage: this.vehicleInfo.mileage,
-    //       zipCode: this.vehicleInfo.zipCode,
-    //       optionIds: this.selectedoptions,
-    //     };
-
-    //     const res = await tradeInApi.getTraeInValue(data);
-    //     const resJson = await res.json();
-    //     console.log(resJson);
-
-    //     this.getpriceAdvisory(resJson.toggles.priceAdvisorAPIKey);
-    //     this.pending = false;
-    //   } catch (err) {
-    //     console.log(err);
-    //   }
-    // },
-    // async getpriceAdvisory(apiKey) {
-    //   try {
-    //     const res = await tradeInApi.getPriceAdvisory(
-    //       apiKey,
-    //       this.vehicleId,
-    //       this.selectedoptions,
-    //       this.vehicleInfo.zipCode,
-    //       this.vehicleInfo.mileage,
-    //       this.condition
-    //     );
-    //     const resJson = await res.json();
-    //     this.increamentStep();
-    //     console.log(resJson);
-    //   } catch (err) {
-    //     console.log(err);
-    //     this.increamentStep();
-    //   }
-    // },
+        this.getpriceAdvisoryUrl(resJson.toggles.priceAdvisorAPIKey);
+        this.pending = false;
+      } catch (err) {
+        console.log(err);
+      }
+    },
+    getpriceAdvisoryUrl(apiKey: string) {
+      const priceAdvisoryUrl = `https://pauc.syndication.kbb.com/priceadvisorusedcar/tradein?APIKey=${apiKey}&VehicleId=${this.vehicleData.vehicleId}&OptionIds=${this.selectedoptions}&ZipCode=${this.vehicleData.zipCode}&Mileage=${this.vehicleData.mileage}&Condition=${this.condition}`;
+      this.setPriceAdvisoryUrl(priceAdvisoryUrl);
+      this.incStep();
+    },
   },
-  // computed: {
-  //   truncatedOptions() {
-  //     if (this.showMore === true) {
-  //       return this.getOnlyNameOptions;
-  //     } else {
-  //       return this.getOnlyNameOptions.slice(0, 10);
-  //     }
-  //   },
-  //   getOnlyNameOptions() {
-  //     let colors = [];
-  //     for (let i = 0; i < this.testOptions.length; i++) {
-  //       if (this.testOptions[i].optionType === 'Option') {
-  //         colors.push(this.testOptions[i]);
-  //       }
-  //     }
 
-  //     return colors;
-  //   },
-  // },
+  computed: {
+    truncatedOptions() {
+      if (this.showMore === true) {
+        return this.getOnlyNameOptions;
+      } else {
+        return this.getOnlyNameOptions.slice(0, 10);
+      }
+    },
+    getOnlyNameOptions() {
+      let options: any = [];
+      for (let i = 0; i < this.options.length; i++) {
+        if (this.options[i].optionType === 'Option') {
+          options.push(this.options[i]);
+        }
+      }
+
+      return options;
+    },
+  },
   // inject: ['step', 'data', 'increamentStep', 'options'],
-  // mounted() {
-  //   this.captureDefaultSelectedOptionsOnRender();
-  //   // console.log(this.testOptions, this.vehicleId);
-  // },
+  mounted() {
+    this.captureDefaultSelectedOptionsOnRender();
+    console.log(this.vehicleData);
+  },
 });
 </script>
 <style lang="" src="./StepTwo.scss"></style>

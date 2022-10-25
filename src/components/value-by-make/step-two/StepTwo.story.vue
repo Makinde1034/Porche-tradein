@@ -163,7 +163,7 @@ import { defineComponent, ref } from 'vue';
 import tradeInApi from '../../../core/tradeInApi';
 
 export default defineComponent({
-  props: ['testOptions', 'vehicleId'],
+  props: ['testOptions', 'vehicleId', 'setPriceAdvisoryUrl'],
   data() {
     return {
       condition: '',
@@ -210,29 +210,32 @@ export default defineComponent({
         const resJson = await res.json();
         console.log(resJson);
 
-        this.getpriceAdvisory(resJson.toggles.priceAdvisorAPIKey);
+        this.getpriceAdvisoryUrl(resJson.toggles.priceAdvisorAPIKey);
         this.pending = false;
       } catch (err) {
         console.log(err);
       }
     },
-    async getpriceAdvisory(apiKey: string) {
-      try {
-        const res = await tradeInApi.getPriceAdvisory(
-          apiKey,
-          this.vehicleId,
-          this.selectedoptions,
-          this.vehicleInfo.zipCode,
-          this.vehicleInfo.mileage,
-          this.condition
-        );
-        const resJson = await res.json();
-        this.increamentStep();
-        console.log(resJson);
-      } catch (err) {
-        console.log(err);
-        this.increamentStep();
-      }
+    getpriceAdvisoryUrl(apiKey: string) {
+      const priceAdvisoryUrl = `https://pauc.syndication.kbb.com/priceadvisorusedcar/tradein?APIKey=${apiKey}&VehicleId=${this.vehicleId}&OptionIds=${this.selectedoptions}&ZipCode=${this.vehicleInfo.zipCode}&Mileage=${this.vehicleInfo.mileage}&Condition=${this.condition}`;
+      this.setPriceAdvisoryUrl(priceAdvisoryUrl);
+      this.increamentStep();
+      // try {
+      //   const res = await tradeInApi.getPriceAdvisory(
+      //     apiKey,
+      //     this.vehicleId,
+      //     this.selectedoptions,
+      //     this.vehicleInfo.zipCode,
+      //     this.vehicleInfo.mileage,
+      //     this.condition
+      //   );
+      //   const resJson = await res.json();
+      //   this.increamentStep();
+      //   console.log(resJson);
+      // } catch (err) {
+      //   console.log(err);
+      //   this.increamentStep();
+      // }
     },
   },
   computed: {

@@ -3,10 +3,14 @@
     <StepOne :setVehicleId="setVehicleId" :setOptions="setOptions" />
   </div>
   <div v-if="activeStep === 1">
-    <StepTwo :vehicleId="vehicleId" :testOptions="options" />
+    <StepTwo
+      :setPriceAdvisoryUrl="setPriceAdvisoryUrl"
+      :vehicleId="vehicleId"
+      :testOptions="options"
+    />
   </div>
   <div v-if="activeStep === 2">
-    <VehicleValue />
+    <VehicleValue :incStep="incStep" :priceAdvisoryUrl="priceAdvisoryUrl" />
   </div>
   <div v-if="activeStep === 3">
     <ContactSection />
@@ -22,7 +26,7 @@ import StepOne from './step-one/StepOne.story.vue';
 import StepTwo from './step-two/StepTwo.story.vue';
 import VehicleValue from '../vehicle-value/VihicleValue/VehicleValue.story.vue';
 import ContactSection from '../contact-section/ContactSection.story.vue';
-import ThankYou from './thank-you/ThankYou.story.vue'
+import ThankYou from './thank-you/ThankYou.story.vue';
 
 export default defineComponent({
   // type inference enabled
@@ -33,7 +37,7 @@ export default defineComponent({
     return {
       activeStep: 0,
       vehicleData: {
-        year: '', 
+        year: '',
         make: '',
         model: '',
         trim: '',
@@ -43,6 +47,7 @@ export default defineComponent({
       },
       options: [],
       vehicleId: '',
+      priceAdvisoryUrl: '',
     };
   },
 
@@ -59,9 +64,12 @@ export default defineComponent({
     setVehicleId(id: String) {
       this.vehicleId = id;
     },
+    setPriceAdvisoryUrl(url: string) {
+      this.priceAdvisoryUrl = url;
+    },
   },
 
-  inject: ['step', 'data', 'increamentStep'],
+  // inject: ['step', 'data', 'increamentStep'],
 
   provide() {
     return {

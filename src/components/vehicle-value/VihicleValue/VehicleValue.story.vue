@@ -13,7 +13,7 @@
       </p>
     </section>
     <section class="value__svg">
-      <img src="../../../assets/images/val.png" alt="" />
+      <img :src="priceAdvisoryUrl" alt="" />
     </section>
     <section class="value__buttons">
       <p-button
@@ -35,6 +35,7 @@ import { defineComponent, ref } from 'vue';
 // import  svg from '../../../assets/images/value_svg.svg'
 
 export default defineComponent({
+  props: ['priceAdvisoryUrl', 'incStep'],
   data() {
     return {
       valueBy: 0,
@@ -42,7 +43,7 @@ export default defineComponent({
   },
   methods: {
     moveTonextStage() {
-      this.increamentStep();
+      this.incStep();
     },
   },
   inject: ['step', 'data', 'increamentStep'],

@@ -13,7 +13,12 @@
       </div>
       <div class="input__box">
         <p-select-wrapper filter="true" label="Trim">
-          <select v-model="vehicleData.trim" name="trim" required>
+          <select
+            v-model="vehicleData.trim"
+            name="trim"
+            :disabled="vehicleData.vin === '' ? true : false"
+            required
+          >
             <option
               v-for="(vehicle, index) in vinVehicles"
               :key="index"
@@ -26,7 +31,12 @@
       </div>
       <div class="input__box">
         <p-select-wrapper filter="true" label="Color">
-          <select v-model="vehicleData.color" name="Color" required>
+          <select
+            v-model="vehicleData.color"
+            :disabled="vehicleData.trim === '' ? true : false"
+            name="Color"
+            required
+          >
             <option
               v-for="(item, index) in getColorsFromOptions"
               :key="index"

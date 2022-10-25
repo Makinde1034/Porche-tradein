@@ -13,7 +13,12 @@
       <!-- make -->
       <div class="input__box">
         <p-select-wrapper filter="true" label="Make">
-          <select v-model="msg.make" name="make" required>
+          <select
+            v-model="msg.make"
+            :disabled="msg.year === '' ? true : false"
+            name="make"
+            required
+          >
             <option @input="test" v-for="(make, index) in makes" :key="index">
               {{ make.makeName }}
             </option>
@@ -23,7 +28,12 @@
       <!-- model -->
       <div class="input__box">
         <p-select-wrapper filter="true" label="Model">
-          <select v-model="msg.model" name="model" required>
+          <select
+            v-model="msg.model"
+            :disabled="msg.make === '' ? true : false"
+            name="model"
+            required
+          >
             <option
               v-for="(model, index) in models"
               :key="index"
@@ -37,7 +47,12 @@
       <!-- trim -->
       <div class="input__box">
         <p-select-wrapper filter="true" label="Trim">
-          <select v-model="msg.trim" name="trim" required>
+          <select
+            v-model="msg.trim"
+            :disabled="msg.model === '' ? true : false"
+            name="trim"
+            required
+          >
             <option
               v-for="(vec, index) in vehicles"
               :key="index"
@@ -51,7 +66,12 @@
       <!-- color -->
       <div class="input__box">
         <p-select-wrapper filter="true" label="Vehicle Color">
-          <select v-model="msg.color" name="Color" required>
+          <select
+            v-model="msg.color"
+            :disabled="msg.trim === '' ? true : false"
+            name="Color"
+            required
+          >
             <option
               v-for="(item, index) in getColorsFromOptions"
               :key="index"

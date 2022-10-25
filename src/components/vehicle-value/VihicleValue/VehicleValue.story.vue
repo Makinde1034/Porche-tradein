@@ -30,6 +30,7 @@
     </section>
   </div>
 </template>
+
 <script>
 import { defineComponent, ref } from 'vue';
 // import  svg from '../../../assets/images/value_svg.svg'
@@ -50,4 +51,6 @@ export default defineComponent({
   mounted() {},
 });
 </script>
+
+
 <style scoped lang="" src="./VehicleValue.scss"></style>

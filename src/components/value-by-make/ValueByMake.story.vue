@@ -7,13 +7,14 @@
       :setPriceAdvisoryUrl="setPriceAdvisoryUrl"
       :vehicleId="vehicleId"
       :testOptions="options"
+      :setRanges="setRanges"
     />
   </div>
   <div v-if="activeStep === 2">
     <VehicleValue :incStep="incStep" :priceAdvisoryUrl="priceAdvisoryUrl" />
   </div>
   <div v-if="activeStep === 3">
-    <ContactSection />
+    <ContactSection :ranges="ranges" />
   </div>
   <div v-if="activeStep === 4">
     <ThankYou />
@@ -48,6 +49,10 @@ export default defineComponent({
       options: [],
       vehicleId: '',
       priceAdvisoryUrl: '',
+      ranges: {
+        low: 0,
+        high: 0,
+      },
     };
   },
 
@@ -66,6 +71,10 @@ export default defineComponent({
     },
     setPriceAdvisoryUrl(url: string) {
       this.priceAdvisoryUrl = url;
+    },
+    setRanges(high: number, low: number) {
+      this.ranges.low = low;
+      this.ranges.high = high;
     },
   },
 

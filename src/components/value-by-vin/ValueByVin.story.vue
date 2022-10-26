@@ -12,13 +12,14 @@
       :incStep="incStep"
       :options="options"
       :vehicleData="vehicleData"
+      :setRanges="setRanges"
     />
   </div>
   <div v-if="activeStep === 2">
     <VehicleValue :incStep="incStep" :priceAdvisoryUrl="priceAdvisoryUrl" />
   </div>
   <div v-if="activeStep === 3">
-    <ContactPage :vehicleData="vehicleData" />
+    <ContactPage :ranges="ranges" :vehicleData="vehicleData" />
   </div>
 </template>
 <script lang="ts">
@@ -37,6 +38,10 @@ export default defineComponent({
       vehicleData: null,
       options: [],
       priceAdvisoryUrl: '',
+      ranges: {
+        low: 0,
+        high: 0,
+      },
     };
   },
   methods: {
@@ -53,6 +58,10 @@ export default defineComponent({
     },
     setPriceAdvisoryUrl(url: string) {
       this.priceAdvisoryUrl = url;
+    },
+    setRanges(high: number, low: number) {
+      this.ranges.low = low;
+      this.ranges.high = high;
     },
   },
   inject: [],

@@ -6,7 +6,7 @@
         {{ vehicleData.trim }} 
       </p>
       <p>
-        Value trade-in range is $38,339 - $40,988, and my trade-in value is
+        Value trade-in range is ${{ranges.low}} - ${{ranges.high}}, and my trade-in value is
         $39,664 <br />
         * Reference only, the actual value may change
       </p>
@@ -93,7 +93,7 @@
 import { defineComponent } from 'vue';
 
 export default defineComponent({
-  props: ['vehicleData'],
+  props: ['vehicleData','ranges'],
   data() {
     return {};
   },

@@ -163,7 +163,7 @@ import { defineComponent, ref } from 'vue';
 import tradeInApi from '../../../core/tradeInApi';
 
 export default defineComponent({
-  props: ['testOptions', 'vehicleId', 'setPriceAdvisoryUrl'],
+  props: ['testOptions', 'vehicleId', 'setPriceAdvisoryUrl', 'setRanges'],
   data() {
     return {
       condition: '',
@@ -211,6 +211,7 @@ export default defineComponent({
         console.log(resJson);
 
         this.getpriceAdvisoryUrl(resJson.toggles.priceAdvisorAPIKey);
+        this.getPriceRange(resJson.valuations.prices);
         this.pending = false;
       } catch (err) {
         console.log(err);
@@ -236,6 +237,20 @@ export default defineComponent({
       //   console.log(err);
       //   this.increamentStep();
       // }
+    },
+    getPriceRange(prices: any) {
+      console.log(prices, 'over here');
+      for (let i = 0; i < prices.length; i++) {
+        if (
+          prices[i].priceTypeDisplay.toLowerCase().includes('trade-in') &&
+          prices[i].priceTypeDisplay
+            .toLowerCase()
+            .includes(this.condition.toLowerCase())
+        ) {
+          this.setRanges(prices[i].rangeHigh, prices[i].rangeLow);
+         
+        }
+      }
     },
   },
   computed: {

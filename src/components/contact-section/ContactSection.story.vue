@@ -4,11 +4,10 @@
       <h3>My Kelley Blue Book®</h3>
       <p>
         {{ vehicleInfo.year }} {{ vehicleInfo.model }} {{ vehicleInfo.make }}
-        
       </p>
       <p>
-        Value trade-in range is $38,339 - $40,988, and my trade-in value is
-        $39,664 <br />
+        Value trade-in range is ${{ ranges.low }} - ${{ ranges.high }}, and my
+        trade-in value is $39,664 <br />
         * Reference only, the actual value may change
       </p>
     </header>
@@ -94,6 +93,7 @@
 import { defineComponent } from 'vue';
 
 export default defineComponent({
+  props: ['ranges'],
   // type inference enabled
   data() {
     return {
@@ -104,6 +104,9 @@ export default defineComponent({
     submitForm() {
       this.increamentStep();
     },
+  },
+  mounted() {
+    console.log(this.ranges);
   },
 
   inject: ['data'],

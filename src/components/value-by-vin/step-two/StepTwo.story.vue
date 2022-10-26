@@ -202,6 +202,7 @@ export default defineComponent({
         console.log(resJson);
 
         this.getpriceAdvisoryUrl(resJson.toggles.priceAdvisorAPIKey);
+        this.getPriceRange(resJson.valuations.prices);
         this.pending = false;
       } catch (err) {
         console.log(err);
@@ -211,6 +212,20 @@ export default defineComponent({
       const priceAdvisoryUrl = `https://pauc.syndication.kbb.com/priceadvisorusedcar/tradein?APIKey=${apiKey}&VehicleId=${this.vehicleData.vehicleId}&OptionIds=${this.selectedoptions}&ZipCode=${this.vehicleData.zipCode}&Mileage=${this.vehicleData.mileage}&Condition=${this.condition}`;
       this.setPriceAdvisoryUrl(priceAdvisoryUrl);
       this.incStep();
+    },
+    getPriceRange(prices: any) {
+      console.log(prices, 'over here');
+      for (let i = 0; i < prices.length; i++) {
+        if (
+          prices[i].priceTypeDisplay.toLowerCase().includes('trade-in') &&
+          prices[i].priceTypeDisplay
+            .toLowerCase()
+            .includes(this.condition.toLowerCase())
+        ) {
+          this.setRanges(prices[i].rangeHigh, prices[i].rangeLow);
+          
+        }
+      }
     },
   },
 

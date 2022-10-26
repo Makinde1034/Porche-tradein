@@ -36,7 +36,7 @@ import { defineComponent, ref } from 'vue';
 // import  svg from '../../../assets/images/value_svg.svg'
 
 export default defineComponent({
-  props: ['priceAdvisoryUrl', 'incStep'],
+  props: ['priceAdvisoryUrl', 'incStep', ],
   data() {
     return {
       valueBy: 0,
@@ -48,9 +48,10 @@ export default defineComponent({
     },
   },
   inject: ['step', 'data', 'increamentStep'],
-  mounted() {},
+  mounted() {
+   
+  },
 });
 </script>
-
 
 <style scoped lang="" src="./VehicleValue.scss"></style>

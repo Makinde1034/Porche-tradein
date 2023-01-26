@@ -23,6 +23,7 @@
   </div>
 </template>
 <script lang="ts">
+
 import { defineComponent } from 'vue';
 import StepOne from './step-one/StepOne.story.vue';
 import StepTwo from './step-two/StepTwo.story.vue';
